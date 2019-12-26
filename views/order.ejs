@@ -1,0 +1,162 @@
+<%- include("./partials/header") %>
+<!-- Jumbotron -->
+<div class="jumbotron">
+	<div id="jumboName">
+		<h1><img src="/images/gift_jumbo.png" alt="" width="200px" height="200px"> Orders</h1>
+	</div>
+	<hr>
+	<p class="lead d-none d-md-inline-block">Memories when put forth in black and white  refresh the connect. Gift them the worthwhile shades with the tinge of gesture.</p>
+</div>
+
+<%- include("./partials/flash_msgs") %>
+
+<!-- Contents -->
+<div class="container-fluid">
+	<div class="row d-flex justify-content-center">
+		<!-- Description -->
+		<div class="details col-10">
+			<div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas illo et autem deserunt omnis necessitatibus eum beatae quia?
+				Consectetur laudantium quisquam maiores repudiandae! Quaerat, odio temporibus quod dolores, optio tempore rerum quasi corrupti in 
+				voluptate placeat animi explicabo sequi voluptatum mollitia at sunt illo tempora suscipit nam quibusdam magnam numquam.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Tabs -->
+	<div class="row d-flex justify-content-around">
+		<div class="tabs col-8 col-lg-5">My works<hr></div>
+		<div class="tabs col-8 col-lg-5 d-none d-lg-block">Get Quotation<hr></div>
+	</div>
+	<div class="row d-flex justify-content-around">
+		<!-- Image slideshow -->
+		<div id="imageDisplay" class="col-8 col-lg-5"></div>
+		<div class="tabs col-8 d-block d-lg-none mt-5">Get Quotation<hr></div>
+		<!-- Form -->
+		<div class="col-8 col-lg-5">
+			<form action='/order/quote' method='POST' enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="nameinput">Name: </label>
+					<input type="text" class="form-control" id="nameinput" name='name' required>
+				</div>
+				
+				<div class="form-group">
+					<label for="emailinput">E-mail: </label>
+					<input type="email" class="form-control" id="emailinput" placeholder="name@example.com" name='email' required>
+				</div>
+				<div class="form-group">
+					<label for="phnumber">Contact No: </label>
+					<input type="tel" class="form-control" id="phnumber" name='num' pattern="[0-9]{6,10}" placeholder="+91" required>
+				</div>
+				<div class="form-group input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marked-alt"></i></span>
+					</div>
+					<input type="text" class="form-control" name='city' laceholder="City" aria-label="city" aria-describedby="basic-addon1" required>
+				</div>
+				<div class="d-flex justify-content-between">
+					<label for="sizeinput">Sketch size: </label>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="size" id="inlineRadio1" value="a3" required>
+						<label class="form-check-label" for="inlineRadio1">A3</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="size" id="inlineRadio2" value="a4">
+						<label class="form-check-label" for="inlineRadio2">A4</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="radio" name="size" id="inlineRadio3" value="a5">
+						<label class="form-check-label" for="inlineRadio3">A5</label>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="sketchtype">Sketch Type: </label>
+					<select id="sketchtype" class="form-control" name='type'>
+						<option selected>Black & White</option>
+						<option>Color</option>
+						<option>Invert Art</option>
+					</select>
+				</div>
+				
+				<div class="form-group">
+					<div class="custom-file">
+						<input name='file' type="file" class="custom-file-input" id="uploadfile" aria-describedby="inputGroupFileAddon04" required>
+						<label class="custom-file-label" for="uploadfile">Choose reference picture</label>
+				  	</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="textAreaInput">Remarks [Optional]: </label>
+					<textarea class="form-control" id="textareainput" name='remarks' rows="5" placeholder="Have any special request or comments?"></textarea>
+				</div>
+				
+				<div class="d-flex justify-content-center">
+					<button type="submit" class="btn btn-lg btn-outline-success form-group"><i class="fas fa-check"></i>  Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Details -->
+	<div class="row d-flex justify-content-center">
+		<div class="details col-10"><i class="fas fa-drafting-compass"></i> <u>DETAILS</u>
+			<br><br>
+			<ul>
+				<li><i class="fas fa-feather-alt"></i> Sketches will be made on good quality A3, A4 or A5 size sheets using semi-professional tools.</li>
+				<li><i class="fas fa-feather-alt"></i> The cost for each type will vary as follows: <br>
+														<strong>A5</strong> : &#8377 500 - &#8377 1000<br>
+														<strong>A4</strong> : &#8377 1000 - &#8377 1500<br> 
+														<strong>A3</strong> : &#8377 1500 - &#8377 2000<br>
+														[Costs mentioned are applicable for only single portraits. Each extra face will cost extra.]</li>
+				<li><i class="fas fa-feather-alt"></i> Frames will cost extra [Optional].</li>
+				<li><i class="fas fa-feather-alt"></i> Shipping excluded. The shipping charges will depend on the location of delivery.</li>
+				<li><i class="fas fa-feather-alt"></i> Clear close-up pictures preferred for portraits.</li>
+				<li><i class="fas fa-feather-alt"></i> Mode of payment - Paytm, PhonePe or Google Pay.</li>
+				<li><i class="fas fa-feather-alt"></i> Half amount should be paid in advance for the sake of confirmation and the rest after completion of the sketch [Before shipping].</li>
+			</ul>
+			<br>
+			<u>Note</u> - Please make sure that you order a sketch well in advance from the day you want it to be delivered.<br>
+			[Preferrably 2 weeks prior]<br><br>
+			<strong>**No cancellation and no refund**</strong>
+		</div>
+	</div>
+</div>
+
+<!-- Comment section -->
+<div class='container'>
+	<div class='row d-flex justify-content-end'>
+		<!-- New comment link -->
+		<div class='col-12 col-md-3'>
+			<a href='/order/review'><button class="btn btn-lg btn-primary"><i class="far fa-comment"></i> Add a comment</button></a>
+		</div>
+	</div>
+	<hr class='white-hr'>
+	<div class='container commentSection'>
+	<!-- Loop through all reviews/comments -->
+	<% for(var i=0; i < review_list.length; i++) { %>
+		<div class='row d-flex justify-content-around commentRow'>
+			<div class='col-2 col-md-1 user'>
+				<i class="fas fa-user"></i>
+			</div>
+			<div class=' col-8 col-md-10 comment'>
+				<div><h3><%= review_list[i].name %></h3></div>
+				<div><h6><%= review_list[i].text %></h6></div>
+			</div>
+			<!-- Edit and delete buttons -->
+			<!-- <div class='col-4 col-md-2 commentButtons'>
+				<a class='btn btn-xs btn-warning' href='/order/review/<%= review_list[i]._id %>/edit'><i class="fas fa-pencil-alt"></i></a>
+				<form class="d-inline" action='/order/review/<%= review_list[i]._id %>?_method=DELETE' method='POST'>
+					<button class='btn btn-xs btn-danger'><i class="far fa-trash-alt"></i></button>
+				</form>
+			</div> -->
+		</div>
+		<hr class='mb-0'>
+	<% } %>
+	</div>
+</div>
+
+<!-- Send the link array for slideshow to frontend JS -->
+<script>var link_arr = <%-JSON.stringify(link_arr)%>;</script>
+<%- include("./partials/footer") %>
