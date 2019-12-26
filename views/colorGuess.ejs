@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Stylesheet for PC devices -->
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+		<!-- Google fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Expletus+Sans|Philosopher:400,700|Satisfy&display=swap" rel="stylesheet">
+
+		<title>Color Game</title>
+		
+		<!-- Tab icon -->
+		<link rel = "icon" href = "/images/colorgame.png" type = "image/x-icon"> 
+	</head>
+
+	<body id="guessColor"class="animate fadeIn delay">
+		<!-- Banner -->
+		<h1 id="gameTitle">
+			The Great 
+			<br>
+			<span id="colorDisplay">RGB</span> 
+			<br>
+			Color Game
+		</h1>
+
+		<!-- Button tray -->
+		<div id="stripe">
+			<button id="reset" class="gameButton">New Colors</button>
+			<span id="message"></span>
+			<button class="mode gameButton">Easy</button>
+			<button class="mode selected gameButton">Hard</button>
+		</div>
+
+		<!-- Color boxes -->
+		<div id="container">
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+		</div>
+
+		<!-- Custom JavaScript -->
+		<script type="text/javascript" src="/scripts/colorGuess.js"></script>
+	</body>
+</html>

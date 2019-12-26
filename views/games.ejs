@@ -1,0 +1,41 @@
+<%- include("./partials/header") %>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+	<div id="jumboName">
+		<h1><img src="/images/rainbow.png" alt="" width="150px" height="150px"> World of Colors!</h1></div>
+		<hr>
+		<p class="lead d-none d-md-inline-block">Enjoy with the colors.</p>
+</div>
+
+<!-- Cards and Contents -->
+<div class="container-fluid">
+	<div class="row d-flex justify-content-center">
+		<a href="/games/colorGuess" target="_blank" class="col-7 col-lg-3">
+			<div class="card text-white">
+				<div id="colorGame" class="card-img-overlay">
+					<h5 class="card-title">Color Game</h5>
+					<p class="card-text">Color color, which color?</p>
+				</div>
+			</div>
+		</a>
+		<a href="/games/musicalCircles" target="_blank" class="col-7 col-lg-3">
+			<div class="card text-white">
+				<div id="melody" class="card-img-overlay">
+					<h5 class="card-title">Musical Circles</h5>
+					<p class="card-text">A delight to your eyes and ears.</p>
+				</div>
+			</div>
+		</a>
+		<a href="#" class="col-7 col-lg-3">
+			<div class="card text-white">
+				<div id="coming" class="card-img-overlay">
+					<h5 class="card-title">Coming soon...</h5>
+					<p class="card-text"><i class="fas fa-spinner"></i></p>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+<%- include("./partials/footer") %>

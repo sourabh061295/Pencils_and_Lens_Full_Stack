@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Stylesheet for PC devices -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+
+	<!-- Stylesheet for mobile devices -->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/mobile.css">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Expletus+Sans|Philosopher:400,700|Satisfy&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+	<title>Pencils and Lens</title>
+
+	<!-- Adding icon to the title -->
+	<link rel = "icon" href = "/images/pencil_menu.png" type = "image/x-icon"> 
+</head>
+  
+<body class="animate fadeIn">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top p-0">
+	<div class="container-fluid p-0">
+		<!-- Navbar logo -->
+		<a class="navbar-brand m-0" href="/"><img src="/images/PnL.png" width = "50" height = "50"></a>
+		<!-- Navbar toggle button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Navbar buttons -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto d-flex justify-content-between">
+				<a class="nav-link galleries" id="<%= (currPage == 'art')?'activePage':'' %>" href="/art">
+					<li class="nav-item">Art Collection</li>
+				</a>
+				<a class="nav-link galleries" id="<%= (currPage == 'image')?'activePage':'' %>" href="/image">
+					<li class="nav-item">Image Gallery</li>
+				</a>
+				<a class="nav-link galleries" id="<%= (currPage == 'order')?'activePage':'' %>" href="/order">
+					<li class="nav-item">Orders</li>
+				</a>
+			</ul>
+			<% if (currPage != 'color') { %>
+				<ul class="nav navbar-nav ml-auto">
+					<a href="/games">
+						<li class="nav-item"><button class="glow-on-hover" type="button">World of Colors!</button></li>
+					</a>
+				</ul>
+			<% } %>
+		</div>
+	</div>
+</nav>

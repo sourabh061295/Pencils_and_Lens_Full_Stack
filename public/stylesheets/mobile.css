@@ -1,0 +1,116 @@
+/* CSS for mobile devices */
+@media screen and (max-width: 550px) {
+    /* Common for all pages */
+    /* Hide the games button and jumbotron image */
+    .glow-on-hover, h1 img {
+        display: none;
+    }
+
+    /* Reduce the height of jumbotron */
+    .jumbotron {
+        height: 20em;
+    }
+
+    /* Adjust the font sizing and position in the jumbotron */
+    h1 {
+        font-size: 4em;
+        margin: 50px 0;
+    }
+
+    /* Remove the hover effect for jumbonames */
+    h1:hover {
+        transform: none;
+    }
+
+    /* Remove the hover effect for links on footer */
+    .social_links:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Adjust the sizes of logos */
+    .social_links img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Align the copyright */
+    .copyright:last-child {
+        text-align: center;
+    }
+
+    /* Home page */
+    /* Decrease the card sizes */
+    .card {
+        height: 20em;
+    }
+
+    /* Adjust the font sizes */
+    .card-title {
+        font-size: 3em;
+    }
+
+    /* Hide the text in card and remove the hover effect */
+    .card-text, .card-img-overlay:hover .card-text {
+        display: none;
+    }
+
+    /* Gallery pages */
+    /* Adjust the padding around the modal */
+    .modal {
+        padding: 150px 0;
+    }
+
+    /* Adjust the position of image in modal */
+    .modal-content {
+        width: 70%;
+        max-width: 450px;
+    }
+
+    /* Order page */
+    /* Adjust the dimension of the slideshow div */
+    #imageDisplay {
+        height: 30em;
+    }
+
+    /* Adjust the font size of the tab elements */
+    .tabs {
+        font-size: 3em;
+    }
+
+    /* Adjust the font size of the form elements */
+    form {
+        font-size: 1em;
+    }
+
+    /* Position the details section */
+    .details {
+        margin: 50px 0;
+    }
+
+    /* Adjust the font size of the details elements */
+    .details > ul {
+        font-size: 0.7em;
+    }
+	
+	/* Adjust the padding for image description */
+	#descrip {
+		padding: 0 2em;
+	}
+	
+	/* Set display to comment buttons */
+	.commentButtons {
+		opacity: 0.9;
+	}
+	
+	/* Remove the hover effects */
+	.commentRow:hover .commentButtons {
+		transform: none;
+	}
+	
+	/* Adjust the size of the alert */
+	.alert {
+		font-size: 1em;
+    	height: 50px;
+	}
+}

@@ -1,38 +1,67 @@
+// Configure environment variables
 require('dotenv').config();
 
-var express     = require("express"),
-    app         = express(),
-    bodyParser  = require("body-parser"),
-    mongoose    = require("mongoose"),
-    cookieParser = require("cookie-parser"),
-    flash        = require("connect-flash"),
-    session = require("express-session"),
-    seedDB      = require("./utils/seedDB"),
-    methodOverride = require("method-override");
+// Require needed dependencies
+var express       = require('express'),
+    path           = require('path'),
+    bodyParser     = require('body-parser'),
+    methodOverride = require("method-override"),
+    mongoose       = require('mongoose'),
+    routes         = require("./routes"),
+    seedDB         = require("./utils/seedDB"),
+	cleanDB         = require("./utils/cleanDB"),
+    flash          = require("connect-flash"),
+    cookieParser   = require('cookie-parser'),
+    upload         = require("express-fileupload");
 
+// Initialize express app
+var app = express();
 
-app.use(bodyParser.urlencoded());
-app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+// View engine setup
+app.set('view engine', 'ejs');
+
+// Connect to database
+mongoose.connect(process.env.MONGODB_URL, {useUnifiedTopology: true, useNewUrlParser:true});
+// Suppress deprecation warnings
+mongoose.set('useFindAndModify', false);
+// Seeding the database
+// seedDB();
+// Cleaning respective collections in DB
+// cleanDB({form: true, review: true});
+
+// Configure the express app
+// JSON parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+// For file upload and transfer
+app.use(upload());
+// Setup public directory
+app.use(express.static(path.join(__dirname, '/public')));
+// For PUT and DELETE methods
 app.use(methodOverride('_method'));
-
+// Session configuration
+app.use(cookieParser());
 app.use(require("express-session")({
-    secret: "Art and Photos",
+    secret: "My first express project",
     resave: false,
     saveUninitialized: false
 }));
-
+// Flash messages setup
 app.use(flash());
 
+
 app.use(function(req, res, next){
-   res.locals.currPage = "";
-   res.locals.success = req.flash('success');
-   res.locals.error = req.flash('error');
-   next();
+	res.locals.currPage = "";
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
 });
 
-app.use('/routes');
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
-});
+// Setup routes
+app.use(routes);
+
+// Start the server
+app.listen(process.env.PORT || 3000, process.env.IP, () => console.log('Pencils and Lens is online.....'));
+
+module.exports = app;
