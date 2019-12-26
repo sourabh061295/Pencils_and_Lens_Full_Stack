@@ -400,18 +400,22 @@ div.col-8.col-md-4 {
 /* Styling the caption */
 #caption {
 	margin-top: 20px;
-	color: #008dcf;
-	font-size: 1.8em;
+	font-size: 2em;
 	text-align: center;
-	text-shadow: -1px 1px 1px rgba(255, 255, 255, 0.6);
+	font-weight: 700;
+	background: #00c3ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Styling the description in modal */
 #descrip {
 	padding: 0 10em;
 	margin: 15px 0;
-	color: #e9ecef;
-	font-size: 1.2em;
+	color: #4ae7ff;
+	font-size: 1.5em;
 	text-align: center;
 }
 
