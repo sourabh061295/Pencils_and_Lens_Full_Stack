@@ -150,11 +150,10 @@ router.post("/order/quote", function(req, res){
 	sendMail(req.body, req.files).then(function(status){
 		if(status == 'error'){
 			req.flash('error',"Oops, something went wrong. Please provide valid details and try again.");
-			res.redirect('/order');
 		} else {
 			req.flash('success',"Quotation request sent successfully. You will get a notification soon on your email-id, don't forget to follow up your emails. Have a great day ahead.");
-			res.redirect('/order');
 		}
+		res.redirect('/order');
 	});
 	
 });
