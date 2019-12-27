@@ -405,7 +405,7 @@ div.col-8.col-md-4 {
 	font-weight: 700;
 	background: #00c3ff;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to top, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -413,8 +413,7 @@ div.col-8.col-md-4 {
 /* Styling the description in modal */
 #descrip {
 	padding: 0 10em;
-	margin: 15px 0;
-	color: #4ae7ff;
+	margin: 15px 0 50px 0;
 	font-size: 1.5em;
 	text-align: center;
 }
@@ -422,6 +421,15 @@ div.col-8.col-md-4 {
 .fa-quote-left, .fa-quote-right {
 	font-size: 0.6em;
 	vertical-align: top;
+}
+
+/* Apply color gradient to descrioption */
+#descrip, #descrip > i {
+	background: #e65c00;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* The Close Button */
@@ -451,7 +459,9 @@ div.col-8.col-md-4 {
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
     font-size: 4em;
-    background: -webkit-linear-gradient(rgb(167, 167, 167), #eee);
+	background: #2BC0E4;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(#EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.4s;
