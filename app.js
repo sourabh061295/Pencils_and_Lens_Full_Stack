@@ -20,14 +20,15 @@ var app = express();
 // View engine setup
 app.set('view engine', 'ejs');
 
-// Connect to database
-mongoose.connect(process.env.MONGODB_URL, {useUnifiedTopology: true, useNewUrlParser:true});
-// Suppress deprecation warnings
-mongoose.set('useFindAndModify', false);
+// Connect to database and Suppress deprecation warnings
+mongoose.connect(process.env.MONGODB_URL, {useUnifiedTopology: true, useNewUrlParser:true, useFindAndModify: false});
+// mongoose.set('useFindAndModify', false);
+
 // Seeding the database
 // seedDB();
+
 // Cleaning respective collections in DB
-// cleanDB({form: true, review: true});
+// cleanDB({form: true, comment: true});
 
 // Configure the express app
 // JSON parser
