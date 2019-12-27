@@ -95,6 +95,7 @@
     /* Position the details section */
     .details {
         margin: 50px 0;
+		padding: 0;
     }
 
     /* Adjust the font size of the details elements */
