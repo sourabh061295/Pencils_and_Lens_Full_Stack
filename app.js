@@ -2,17 +2,18 @@
 require('dotenv').config();
 
 // Require needed dependencies
-var express       = require('express'),
+var express        = require('express'),
     path           = require('path'),
     bodyParser     = require('body-parser'),
     methodOverride = require("method-override"),
     mongoose       = require('mongoose'),
     routes         = require("./routes"),
     seedDB         = require("./utils/seedDB"),
-	cleanDB         = require("./utils/cleanDB"),
+	cleanDB        = require("./utils/cleanDB"),
     flash          = require("connect-flash"),
     cookieParser   = require('cookie-parser'),
-    upload         = require("express-fileupload");
+    upload         = require("express-fileupload"),
+    port           = process.env.PORT || 3000;
 
 // Initialize express app
 var app = express();
@@ -62,6 +63,6 @@ app.use(function(req, res, next){
 app.use(routes);
 
 // Start the server
-app.listen(process.env.PORT || 3000, process.env.IP, () => console.log('Pencils and Lens is online.....'));
+app.listen(port, () => console.log('Pencils and Lens is online.....'));
 
 module.exports = app;
