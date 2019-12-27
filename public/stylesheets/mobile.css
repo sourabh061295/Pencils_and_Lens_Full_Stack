@@ -47,7 +47,7 @@
 
     /* Adjust the font sizes */
     .card-title {
-        font-size: 3em;
+        font-size: 2.9em;
     }
 
     /* Hide the text in card and remove the hover effect */
@@ -72,6 +72,11 @@
     #imageDisplay {
         height: 30em;
     }
+	
+	/* Adjust the displayed tab */
+	.tabs.mt-5 {
+		height: 180px;
+	}
 
     /* Adjust the font size of the tab elements */
     .tabs {
