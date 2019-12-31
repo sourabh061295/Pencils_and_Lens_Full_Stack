@@ -79,7 +79,7 @@
 	
 	/* Adjust the displayed tab */
 	.tabs.mt-5 {
-		height: 180px;
+		height: 120px;
 	}
 
     /* Adjust the font size of the tab elements */
@@ -123,5 +123,16 @@
 		font-size: 1em;
 		height: 100px;
     	padding: 10px;
+	}
+	
+	.popup {
+		width: 80%;
+		padding: 10px;
+		font-size: 0.8em;
+	}
+	
+	.popup .close {
+		top: 0;
+		right: 10px;
 	}
 }

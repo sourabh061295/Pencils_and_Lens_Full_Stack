@@ -1,3 +1,22 @@
+// var popButton =  document.querySelector('.popupButton');
+// popButton.click();
+
+// Logic for popup effect in home page
+$(document).ready(function() {
+    var homePage = sessionStorage['homePage'];
+    if (!homePage) {
+		document.querySelector('.popupButton').click();
+        sessionStorage['homePage'] = "visited";
+    }
+	
+	// Bind esc key to close icon in popup
+	$(document).keydown(function(event) { 
+  		if (event.keyCode == 27) { 
+    	document.querySelector('.popup .close').click();
+ 	 	}
+	});
+});
+
 //Scroll effect for navbar
 $(window).scroll(function() {
     if ($(document).scrollTop() > 50 && (currPage != "color")) {
@@ -6,6 +25,8 @@ $(window).scroll(function() {
       $('nav').removeClass('scrolled');
     }
 });
+
+
 
 //Changing background of jumbotron
 switch (currPage) {
