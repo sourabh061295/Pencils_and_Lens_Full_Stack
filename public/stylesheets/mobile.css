@@ -10,7 +10,12 @@
     .jumbotron {
         height: 20em;
     }
-
+	
+	/* Taglines for all pages */
+	.lead {
+		font-size: 0.6em;
+	}
+	
     /* Adjust the font sizing and position in the jumbotron */
     h1 {
         font-size: 4em;
@@ -96,6 +101,7 @@
     .details {
         margin: 50px 0;
 		padding: 0;
+		font-size: 1.2em;
     }
 
     /* Adjust the font size of the details elements */

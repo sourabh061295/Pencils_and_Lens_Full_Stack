@@ -252,6 +252,7 @@ h1:hover {
 hr {
     width: 100%;
     height: 12px;
+	margin-bottom: 0;
     border: 0;
     box-shadow: inset 0 10px 10px -14px rgba(0, 0, 0, 0.8);
 }
@@ -712,6 +713,37 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 /* Hover effect for anchor tag */
 .reviewForm a:hover {
 	opacity: 0.5;
+}
+
+/* Personal picture */
+#self {
+	margin: auto;
+}
+
+/* Space properly */
+hr:nth-child(3) {
+	margin-top: 78px;
+}
+
+/* hr styling around the image */
+#self hr {
+	overflow: visible;
+    height: 30px;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+#self hr:before {  
+	display: block;
+    content: "";
+    height: 30px;
+    margin-top: -30px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }
 
 /* BONUS PAGE ========================================================= */
