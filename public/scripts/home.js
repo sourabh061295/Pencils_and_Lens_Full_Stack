@@ -1,23 +1,24 @@
 // var popButton =  document.querySelector('.popupButton');
 // popButton.click();
 
-if (currPage == 'home') {
-	// Logic for popup effect in home page
-	$(document).ready(function() {
-		var homePage = sessionStorage['homePage'];
-		if (!homePage) {
-			document.querySelector('.popupButton').click();
-			sessionStorage['homePage'] = "visited";
-		}
+// Auto-trigger popup banner
+// if (currPage == 'home') {
+// 	// Logic for popup effect in home page
+// 	$(document).ready(function() {
+// 		var homePage = sessionStorage['homePage'];
+// 		if (!homePage) {
+// 			document.querySelector('.popupButton').click();
+// 			sessionStorage['homePage'] = "visited";
+// 		}
 	
-		// Bind esc key to close icon in popup
-		$(document).keydown(function(event) { 
-			if (event.keyCode == 27) { 
-			document.querySelector('.popup .close').click();
-			}
-		});
-	});	
-}
+// 		// Bind esc key to close icon in popup
+// 		$(document).keydown(function(event) { 
+// 			if (event.keyCode == 27) { 
+// 			document.querySelector('.popup .close').click();
+// 			}
+// 		});
+// 	});	
+// }
 
 //Scroll effect for navbar
 $(window).scroll(function() {
