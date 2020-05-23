@@ -61,7 +61,7 @@
     }
 
     /* Hide the text in card and remove the hover effect */
-    .card-text, .card-img-overlay:hover .card-text {
+    .card-text, .card-img-overlay:hover .card-text, #giftCard .card-text, #giftCard:hover .card-text {
         display: none;
     }
 

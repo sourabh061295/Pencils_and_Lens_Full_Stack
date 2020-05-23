@@ -37,6 +37,8 @@ switch (currPage) {
                           break;
   case "image":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/photo_wall.jpg)";
                           break;
+  case "portrait":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/portrait.jpg)";
+                          break;
   case "order": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/sketch_order.jpg)";
                           break;
   case "color": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/bonus_banner.jpg)";

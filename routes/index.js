@@ -44,6 +44,21 @@ router.get("/image", function(req, res){
     });
 });
 
+// Portraits page
+router.get("/portrait", function(req, res){
+	res.locals.currPage = "portrait";
+	// Read all image links from the database
+	specialLinks.find({}, (err, links) => {
+		if (err){ 
+			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
+			res.redirect("/");
+			console.log(err);
+		} else {
+			res.render("gallery", {link_arr: links});
+		}
+    });
+});
+
 // Order Page
 router.get("/order", function(req, res){
 	res.locals.currPage = "order";

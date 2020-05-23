@@ -263,7 +263,6 @@ hr {
 /* Image cards */
 .card {
     height: 35em;
-    width: 95%;
     margin: 10px;
     background: inherit;   
 }
@@ -277,7 +276,7 @@ hr {
 }
 
 /* Shadow off on hover */
-.card-img-overlay:hover .card-title {
+.card-img-overlay:hover .card-title, #giftCard:hover .card-title {
     text-shadow: none;
 }
 
@@ -294,7 +293,7 @@ hr {
 }
 
 /* Reveal on hover */
-.card-img-overlay:hover .card-text {
+.card-img-overlay:hover .card-text, #giftCard:hover .card-text {
     display: block;
 }
 
@@ -328,8 +327,37 @@ hr {
     background-position: center;
 }
 
-#giftCard {
+#portCard {
     background-image: url("/images/portrait.png");
+}
+
+#gift {
+	height: 12em;
+}
+
+#giftCard {
+	height: 12em;
+    background-image: url("/images/gift_background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+#giftCard .card-title {
+    font-size: 3em;
+    text-align: center;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Card sub line styling */
+#giftCard .card-text {
+    margin: 0;
+    padding: 0 20px;
+    display: none;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    transition: all 0.4s;
 }
 
 /* New Year popup window */
