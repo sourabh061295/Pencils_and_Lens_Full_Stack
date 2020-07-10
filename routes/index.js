@@ -251,7 +251,7 @@ router.post("/upload", function(req, res){
 	}
 	else
 	{
-		req.flash('error', 'Icorrect password. Please try again.');
+		req.flash('error', 'Incorrect password. Please try again.');
 		res.redirect("/upload");
 	}
 });
