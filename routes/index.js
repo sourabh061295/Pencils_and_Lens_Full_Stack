@@ -1,3 +1,6 @@
+// Configure environment variables
+require('dotenv').config();
+
 // Require all modules
 var express       = require('express'),
 	artLinks      = require('../models/artLinks'),
@@ -187,6 +190,70 @@ router.get("/games/colorGuess", function(req, res){
 // Musical circles UI
 router.get("/games/musicalCircles", function(req, res){
    res.render("musicalCircles"); 
+});
+
+// Create Upload route
+router.get("/upload", function(req, res){
+	res.locals.currPage = "";
+	res.render('uploadPhoto');
+});
+
+// Upload post route
+router.post("/upload", function(req, res){
+	// Get the new comment
+	var newUpload = req.body.upload;
+	// Validate the password
+	if (process.env.PASS == newUpload['password'])
+	{
+		// Check and use the correct database to add the instance
+		if (newUpload['type'] == 'sketch')
+		{
+			var dbElement = {'title':newUpload['title'], 'description':newUpload['description'], 'link':newUpload['link']};
+			artLinks.create(dbElement, function(err, data) {
+				if (err){
+					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
+					res.redirect("/upload");
+					console.log(err);
+				} else {
+					req.flash('success','Instance added successfully.');
+					res.redirect('/art');
+				}
+			});
+		}
+		else if (newUpload['type'] == 'photo')
+		{
+			var dbElement = {'title':newUpload['title'], 'description':newUpload['description'], 'link':newUpload['link']};
+			imageLinks.create(dbElement, function(err, data) {
+				if (err){
+					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
+					res.redirect("/upload");
+					console.log(err);
+				} else {
+					req.flash('success','Instance added successfully.');
+					res.redirect('/image');
+				}
+			});
+		}
+		else if (newUpload['type'] == 'portrait')
+		{
+			var dbElement = {'title':newUpload['title'], 'link':newUpload['link']};
+			specialLinks.create(dbElement, function(err, data) {
+				if (err){
+					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
+					res.redirect("/upload");
+					console.log(err);
+				} else {
+					req.flash('success','Instance added successfully.');
+					res.redirect('/portrait');
+				}
+			});
+		}
+	}
+	else
+	{
+		req.flash('error', 'Icorrect password. Please try again.');
+		res.redirect("/upload");
+	}
 });
 
 module.exports = router;

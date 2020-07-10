@@ -33,7 +33,7 @@ body {
 }
 
 /* Modify all anchor tags */
-a, .reviewForm a {
+a, .reviewForm a, .new_btn_tray a {
     color: #e9ecef;
     text-decoration: none;
     transition: all 0.4s;
@@ -66,6 +66,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.2em;
     height: 70px;
 	margin: 0;
+	margin-top: 80px;
 	padding: 10px 50px;
 	transform: skew(-30deg);
 }
@@ -694,6 +695,58 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 	transform: translateY(15px);
 }
 
+/* Buttons for adding instances */
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+/* Span of the button */
+.button span {
+	color: white;
+	position: absolute;
+	margin: auto 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* Polylines */
+.o1 {
+	fill: rgba(4, 130, 184, 0.5);
+	transition: all 1s ease-in-out;
+}
+
+.o2 {
+	stroke: rgba(255, 255, 255, 0.8);
+	stroke-dasharray: 20 420;
+	stroke-dashoffset: 20;
+	transition: all 1s ease-in-out;
+}
+
+/* Hoovered effects */
+.button:hover .o1 {
+	fill: rgba(4, 184, 52, 0.8);
+}
+		
+.button:hover .o2 {
+	stroke-dashoffset: -420;
+}
+
+.button:hover span {
+	color: blackss;
+}
+
+/* Animation svg */
+svg {
+	height: 55px;
+	width: 150px;
+	fill: none;
+	stroke-width: 5;
+	border-radius: 5px;
+}
+
 /* CREATE AND EDIT COMMENT PAGE ======================================*/
 /* Create and Edit form styling */
 /* Spacing from the top navbar */
@@ -708,7 +761,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 }
 
 /* Adjusting the elements to center */
-.reviewForm label, .reviewForm .btn-tray {
+.reviewForm label, .reviewForm .btn-tray, .reviewForm .upload_option {
 	margin: 0 25%;
 }
 
