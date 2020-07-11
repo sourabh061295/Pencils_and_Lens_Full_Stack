@@ -65,8 +65,7 @@ body::-webkit-scrollbar-thumb {
 	text-align: center;
     font-size: 1.2em;
     height: 70px;
-	margin: 0;
-	margin-top: 80px;
+	margin: 80px 0;
 	padding: 10px 50px;
 	transform: skew(-30deg);
 }
