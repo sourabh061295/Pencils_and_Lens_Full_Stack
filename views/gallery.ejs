@@ -4,11 +4,11 @@
 <div class="jumbotron">
 	<div id="jumboName">
 		<% if(currPage == "art"){ %>
-			<h1><img src="/images/art_jumbo.png" width="200px" height="200px"> Art Collection</h1>
+			<h1><!-- <img src="/images/art_jumbo.png" width="200px" height="200px"> -->Art Collection</h1>
 		<% } else if (currPage == "image") { %>
-			<h1><img src="/images/gal_jumbo.png" width="200px" height="200px"> Image Gallery</h1>
+			<h1><!-- <img src="/images/gal_jumbo.png" width="200px" height="200px"> -->Image Gallery</h1>
 		<% } else if (currPage == "portrait") { %>
-			<h1><img src="/images/portrait_icon.png" width="200px" height="200px"> Portraits</h1>
+			<h1><!-- <img src="/images/portrait_icon.png" width="200px" height="200px">-->Portraits</h1>
 		<% } %>
 		<hr>
 		<% if(currPage == "art"){ %>
@@ -70,9 +70,9 @@
 			<!-- Modal Caption (Image Text) -->
   			<div id="caption"></div>
 			<!-- Modal Image Description  -->
-			<div <% if (currPage == "portrait") { %> class= "d-none" <% } %> >
+			<!-- <div <% if (currPage == "portrait") { %> class= "d-none" <% } %> >
 				<em><div id="descrip"></div></em>
-			</div>
+			</div> -->
 			
 		</div>
 	</div>

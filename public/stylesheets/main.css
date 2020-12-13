@@ -6,10 +6,12 @@ html {
 }
 
 body {
-    font-family: Philosopher, Trajan Pro;
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: Expletus Sans, Trajan Pro;
+    /* background: #000000;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+	background: url("/images/star_bg.jpg");
     overflow-x: hidden;
 }
 
@@ -65,7 +67,7 @@ body::-webkit-scrollbar-thumb {
 	text-align: center;
     font-size: 1.2em;
     height: 70px;
-	margin: 80px 0;
+	margin-top: 80px;
 	padding: 10px 50px;
 	transform: skew(-30deg);
 }
@@ -78,6 +80,7 @@ body::-webkit-scrollbar-thumb {
 /* Navbar */
 .navbar {
     background: #000;
+	font-family: Righteous;
 }
 
 /* Fade after scroll */
@@ -96,7 +99,7 @@ nav {
     padding: 0;
     text-align: center;
     transition: all 1s ease-in-out;
-    animation: rotation 2s infinite linear;
+    animation: rotation 3s infinite linear;
 }
 
 /* Logo hover effect */
@@ -132,7 +135,7 @@ a.nav-link.galleries li {
 
 /* Button hover effects */
 a.nav-link.galleries:hover {
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: rgba(0, 0, 0, 0.8);
     background: #e9ecef;
     transition: all 0.4s;
@@ -217,20 +220,24 @@ a.nav-link.galleries:hover {
 /* Jumbotron */
 .jumbotron {
     padding-top: 80px;
-    height: 35em;
+    height: 30em;
     text-align: center;
     box-shadow: 0px 8px 10px #98999b;
-    background: url("/images/home.png") center no-repeat;
+    background: url("/images/home_new.jpg") center no-repeat;
     background-size: cover;
     background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
 }
 
+#jumboName {
+	color: rgb(0, 0, 0);
+}
+
 /* Page heading */
 h1 {
-    margin-top: 0.8em;
+    margin-top: 0.5em;
     font-size: 9em;
-    font-family: Satisfy, Ink Free;
+    font-family: Spirax, Ink Free;
     letter-spacing: 1px;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.3), 4px 8px 4px rgba(0, 0, 0, 0.1), 6px 12px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
@@ -262,22 +269,26 @@ hr {
 /* HOME PAGE ========================================================== */
 /* Image cards */
 .card {
-    height: 35em;
+    height: 25em;
     margin: 10px;
-    background: inherit;   
+    background: inherit;  
 }
 
 /* Card title styling */
 .card-title {
     margin: 10px;
-    font-size: 4em;
+    font-size: 3em;
+	font-family: Cormorant Unicase;
+	font-weight: 500;
     text-align: center;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
+	color: rgba(0,0,0, 0.75);
 }
 
 /* Shadow off on hover */
 .card-img-overlay:hover .card-title, #giftCard:hover .card-title {
     text-shadow: none;
+	color: rgba(0,0,0,255);
+	text-shadow: -1px -1px 0 rgba(255,255,255, 0.2), 1px -1px 0 rgba(255,255,255, 0.2), -1px 1px 0 rgba(255,255,255, 0.2), 1px 1px 0 rgba(255,255,255, 0.2);
 }
 
 /* Card sub line styling */
@@ -285,7 +296,6 @@ hr {
     margin: 100px 20px;
     padding: 0 20px;
     display: none;
-    font-size: 1.2em;
     font-weight: 700;
     text-align: center;
     color: rgba(0, 0, 0, 0.6);
@@ -318,17 +328,24 @@ hr {
 
 /* Assigning images to each card */
 #sketchCard {
-    background-image: url("/images/sketch.png");
-    background-position: right;
+    background-image: url("/images/frames.jpg");
+    background-position: center;
+	background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
 }
 
 #photoCard {
-    background-image: url("/images/photo.png");
+    background-image: url("/images/photo_gallery_new.jpeg");
     background-position: center;
+	background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
 }
 
 #portCard {
-    background-image: url("/images/portrait.png");
+    background-image: url("/images/portrait_new.jpg");
+	background-position: center;
+	background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
 }
 
 #gift {
@@ -337,15 +354,15 @@ hr {
 
 #giftCard {
 	height: 12em;
-    background-image: url("/images/gift_background.jpg");
+    background-image: url("/images/sketch_order.jpg");
 	background-size: cover;
 	background-position: center;
 }
 
 #giftCard .card-title {
+	color: rgba(0,0,0, 0.75);
     font-size: 3em;
     text-align: center;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Card sub line styling */
@@ -353,7 +370,6 @@ hr {
     margin: 0;
     padding: 0 20px;
     display: none;
-    font-size: 1.2em;
     font-weight: 700;
     text-align: center;
     color: rgba(0, 0, 0, 0.6);
@@ -552,13 +568,13 @@ div.col-8.col-md-4 {
 /* Section titles */
 .tabs {
     height: 2.5em;
-    font-family: Satisfy, Ink Free;
+    font-family: Righteous, Ink Free;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
-    font-size: 4em;
-	background: #2BC0E4;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(#EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 3.5em;
+	background: #abbaab;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.4s;
@@ -572,9 +588,9 @@ div.col-8.col-md-4 {
 
 /* Image slideshow */
 #imageDisplay {
-    height: 49em;
+    height: 45em;
     display: block;
-	background-color: black;
+	background-color: rgba(0,0,0,0);
     background-image: url("/images/portrait.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -592,46 +608,11 @@ div.col-8.col-md-4 {
     margin-bottom: 400px;
 }
 
-/* Google form button styling and effects */
-#formButton {
-    height: 2em;
-    width: 50%;
-    font-size: 2em;
-    font-family: Satisfy;
-    line-height: 1.5em;
-    background: #2193b0;
-    transition: 0.4s all;
-}
-
-#formButton:hover {
-    background: #373B44;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #e9ecef;
-    box-shadow: 2px 2px 10px #fff, -2px -2px 10px #fff, 2px -2px 10px #fff, -2px 2px 10px #fff,
-                4px 4px 10px rgba(255, 255, 255, 0.6),  -4px -4px 10px rgba(255, 255, 255, 0.6), 4px -4px 10px rgba(255, 255, 255, 0.6),  -4px 4px 10px rgba(255, 255, 255, 0.6);
-    border: none;
-    transform: scale(1.2);
-}
-
-i.fas.fa-tasks {
-    opacity: 0;
-    width: 0;
-    color: #e9ecef;
-    transition: 0.3s all;
-}
-
-#formButton:hover i.fas.fa-tasks {
-    width: 30px;
-    opacity: 1;
-    transform: rotate(360deg);
-}
-
 /* Details section */
 .details {
-    margin: 50px 0;
-    color: rgba(255, 255, 255, 0.726);
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
+	font-family: Kurale;
     font-size: 1.5em;
 }
 
@@ -651,7 +632,7 @@ form {
 /* Form focus styling */
 #textAreaInput:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="file"]:focus, input[type="tel"]:focus {
     border-color: rgba(126, 239, 104, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px rgba(126, 239, 104, 0.7);
     outline: 0 none;
 }
 
@@ -675,7 +656,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 
 /* Styling each comment */
 .comment {
-	padding-top: 15px;
+	padding: 15px 0 0 0;
 	font-family: Expletus Sans, Maiandra GD;
 	text-transform: capitalize;	
 }
@@ -687,6 +668,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 	opacity: 0;
 	transition: 0.4s all;
 }
+
 
 /* Show buttons when comment is hovered */
 .commentRow:hover .commentButtons {
@@ -713,7 +695,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 
 /* Polylines */
 .o1 {
-	fill: rgba(4, 130, 184, 0.5);
+	fill: rgba(255, 255, 255, 0);
 	transition: all 1s ease-in-out;
 }
 
@@ -726,7 +708,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 
 /* Hoovered effects */
 .button:hover .o1 {
-	fill: rgba(4, 184, 52, 0.8);
+	fill: rgba(255, 255, 255, 1);
 }
 		
 .button:hover .o2 {
@@ -734,7 +716,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 }
 
 .button:hover span {
-	color: blackss;
+	color: black;
 }
 
 /* Animation svg */
@@ -750,7 +732,7 @@ svg {
 /* Create and Edit form styling */
 /* Spacing from the top navbar */
 .reviewForm {
-	padding-top: 80px;
+	padding-top: 50px;
 }
 
 /* Placing the form to the center */
@@ -770,8 +752,8 @@ svg {
 	margin-bottom: 50px;
 	color: white;
 	text-align: center;
-	font-family: Satisfy;
-	font-size: 4em;
+	font-family: Righteous;
+	font-size: 3.5em;
 	background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
     -webkit-background-clip: text;

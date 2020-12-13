@@ -18,7 +18,7 @@
 	
     /* Adjust the font sizing and position in the jumbotron */
     h1 {
-        font-size: 4em;
+        font-size: 3em;
         margin: 50px 0;
     }
 
@@ -46,17 +46,17 @@
 
     /* Home page */
     /* Decrease the card sizes */
-    .card {
+    .card, #gift, #giftCard {
         height: 20em;
     }
 
 	/* Remove padding from the cards */
-	.row .col-7.col-lg-3 {
+	.row .col-7.col-lg-3, .row .col-7.col-lg-9 {
 		padding: 0;
 	}
 	
     /* Adjust the font sizes */
-    .card-title {
+    .card-title, #giftCard .card-title {
         font-size: 2.6em;
     }
 
@@ -100,7 +100,6 @@
 
     /* Position the details section */
     .details {
-        margin: 50px 0;
 		padding: 0;
 		font-size: 1.2em;
     }
@@ -128,7 +127,7 @@
 	/* Adjust the size of the alert */
 	.alert {
 		font-size: 1em;
-		height: 100px;
+		height: 50px;
     	padding: 10px;
 	}
 	
@@ -141,6 +140,10 @@
 	.popup .close {
 		top: 0;
 		right: 10px;
+	}
+	
+	.reviewForm h2 {
+		font-size: 2em;
 	}
 }
 
