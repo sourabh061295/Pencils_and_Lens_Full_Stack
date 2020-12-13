@@ -317,8 +317,6 @@ hr {
 .card-img-overlay:hover {
     color: #000;
     transform: scale(1.05);
-    background-color: rgba(255,255,255,0.5);
-    background-blend-mode: lighten;
     border-radius: 20px;
     box-shadow: 5px 5px 20px rgba(3, 252, 248, 0.6), -5px -5px 20px rgba(3, 252, 248, 0.6),
                 5px -5px 20px rgba(3, 252, 248, 0.6), -5px 5px 20px rgba(3, 252, 248, 0.6),
@@ -357,6 +355,8 @@ hr {
     background-image: url("/images/sketch_order.jpg");
 	background-size: cover;
 	background-position: center;
+	background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
 }
 
 #giftCard .card-title {
