@@ -97,7 +97,8 @@ router.post("/order", function(req, res){
 	// Get the new comment
 	var newReview = req.body.review;
 	// Validate the comment for junk links
-	if (newReview['text'].match(/\b(?:(?:https?|ftp|http):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i))
+	if (newReview['text'].match(/\b(?:(?:https?|ftp|http):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i) || 
+		newReview['text'].match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi))
 	{
 		req.flash('error','Oops!!, Cannot add your comment.');
 		res.redirect("/order/review");
