@@ -7,9 +7,9 @@ var express       = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require("method-override"),
     mongoose       = require('mongoose'),
-    routes         = require("../routes"),
-    seedDB         = require("../utils/seedDB"),
-	cleanDB         = require("../utils/cleanDB"),
+    routes         = require("./routes"),
+    seedDB         = require("./utils/seedDB"),
+	cleanDB         = require("./utils/cleanDB"),
     flash          = require("connect-flash"),
     cookieParser   = require('cookie-parser'),
     upload         = require("express-fileupload");
@@ -19,7 +19,6 @@ var app = express();
 
 // View engine setup
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views'));
 
 // Connect to database
 mongoose.connect(process.env.MONGODB_URL);
@@ -37,7 +36,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 // For file upload and transfer
 app.use(upload());
 // Setup public directory
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '/public')));
 // For PUT and DELETE methods
 app.use(methodOverride('_method'));
 // Session configuration
