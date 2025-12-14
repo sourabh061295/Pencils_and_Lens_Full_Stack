@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node app.js"
+    "start": "node app.js"
   },
   "author": "Sourabh Kulkarni",
   "license": "ISC",
@@ -16,7 +16,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.10",
     "express": "^4.22.1",
-    "express-fileupload": "^1.1.6",
+    "express-fileupload": "^1.1.9",
     "express-session": "^1.18.2",
     "method-override": "^3.0.0",
     "mongoose": "^6.13.6",
