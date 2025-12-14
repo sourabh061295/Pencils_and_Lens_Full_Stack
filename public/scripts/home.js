@@ -1,5 +1,8 @@
 // var popButton =  document.querySelector('.popupButton');
-// popButton.click();
+// if (popButton)
+// {
+// 	popButton.click();
+// }
 
 // Auto-trigger popup banner
 // if (currPage == 'home') {
@@ -30,14 +33,13 @@ $(window).scroll(function() {
 });
 
 
-
 //Changing background of jumbotron
 switch (currPage) {
   case "art": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/frames.jpg)";
                           break;
-  case "image":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/photo_wall.jpg)";
+  case "image":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/photo_gallery_new.jpeg)";
                           break;
-  case "portrait":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/portrait.jpg)";
+  case "portrait":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/portrait_new.jpg)";
                           break;
   case "order": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/sketch_order.jpg)";
                           break;

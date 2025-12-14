@@ -96,17 +96,27 @@ router.get("/order/review", function(req, res){
 router.post("/order", function(req, res){
 	// Get the new comment
 	var newReview = req.body.review;
-	// Add the new comment to the database
-	reviews.create(newReview, function(err, data) {
-		if (err){
-			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
-			res.redirect("/order/review");
-			console.log(err);
-		} else {
-			req.flash('success','Comment added successfully.')
-			res.redirect('/order');
-		}
-	});
+	// Validate the comment for junk links
+	if (newReview['text'].match(/\b(?:(?:https?|ftp|http):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i) || 
+		newReview['text'].match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi))
+	{
+		req.flash('error','Oops!!, Cannot add your comment.');
+		res.redirect("/order/review");
+	}
+	else
+	{
+		// Add the new comment to the database
+		reviews.create(newReview, function(err, data) {
+			if (err){
+				req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
+				res.redirect("/order/review");
+				console.log(err);
+			} else {
+				req.flash('success','Comment added successfully.')
+				res.redirect('/order');
+			}
+		});
+	}
 });
 
 // Edit comment route

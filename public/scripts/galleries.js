@@ -8,7 +8,7 @@ var modalImg = $("#img01");
 var span = document.getElementsByClassName("close")[0];
 
 var captionText = document.getElementById("caption");
-var descriptionText = document.getElementById("descrip");
+// var descriptionText = document.getElementById("descrip");
 
 /********************************************* Modal image ****************************************/
 // Assign each image and data to the modal function for pop up effect
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	var info = this.alt;
 	info = info.split('|');
 	captionText.innerHTML = info[0];
-	descriptionText.innerHTML = '<i class="fas fa-quote-left"></i> '+info[1]+' <i class="fas fa-quote-right"></i>';
+	// descriptionText.innerHTML = '<i class="fas fa-quote-left"></i> '+info[1]+' <i class="fas fa-quote-right"></i>';
   });
 });
 
