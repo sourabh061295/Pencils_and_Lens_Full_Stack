@@ -21,6 +21,8 @@ var app = express();
 app.set('view engine', 'ejs');
 
 // Connect to database
+// Silence Mongoose strictQuery deprecation warning and prepare for Mongoose v7
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.MONGODB_URL);
 
 // Seeding the database
