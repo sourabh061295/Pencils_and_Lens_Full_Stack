@@ -99,12 +99,12 @@ nav {
     padding: 0;
     text-align: center;
     transition: all 1s ease-in-out;
-    animation: rotation 3s infinite linear;
+    /* animation: rotation 3s infinite linear; */
 }
 
 /* Logo hover effect */
 a.navbar-brand:hover {
-    /* transform: rotateY(360deg); */
+    transform: rotate3d(1, 1, 1, 360deg); 
 }
 
 /* All buttons on the navbar */
@@ -401,6 +401,16 @@ hr {
 	opacity: 1;
 }
 
+/* When custom modal is open, hide the navbar and prevent page scroll */
+body.modal-open-custom .navbar {
+    display: none !important;
+}
+
+body.modal-open-custom {
+    overflow: hidden !important;
+}
+
+
 /* Popup window */
 .popup {
 	position: relative;
@@ -416,13 +426,14 @@ hr {
 
 /* Popup window content styling */
 .popup h2, .popup .popupContent {
-	margin-bottom: 0;
-	text-align: center;
-	font-family: Expletus Sans, Gabriola;
-	background: #780206;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	-webkit-background-clip: text;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: Expletus Sans, Gabriola;
+    background: #780206;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -470,10 +481,10 @@ div.col-8.col-md-4 {
 .myImg:hover {
     opacity: 0.7;
     transform: scale(1.05);
-    box-shadow: 5px 5px 10px rgba(0, 255, 0, 0.6), -5px -5px 10px rgba(0, 255, 0, 0.6),
-                5px -5px 10px rgba(0, 255, 0, 0.6), -5px 5px 10px rgba(0, 255, 0, 0.6),
-                10px 10px 10px rgba(0, 255, 0, 0.3), -10px -10px 10px rgba(0, 255, 0, 0.3),
-                10px -10px 10px rgba(0, 255, 0, 0.3), -10px 10px 10px rgba(0, 255, 0, 0.3);
+    box-shadow: 5px 5px 10px rgba(207, 207, 207, 0.1), -5px -5px 10px rgba(207, 207, 207, 0.1),
+                5px -5px 10px rgba(207, 207, 207, 0.1), -5px 5px 10px rgba(207, 207, 207, 0.1),
+                10px 10px 10px rgba(207, 207, 207, 0.1), -10px -10px 10px rgba(207, 207, 207, 0.1),
+                10px -10px 10px rgba(207, 207, 207, 0.1), -10px 10px 10px rgba(207, 207, 207, 0.1);
 }
   
 /* The Modal (background) */
@@ -519,7 +530,8 @@ div.col-8.col-md-4 {
 	background: #00c3ff;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	-webkit-background-clip: text;
+	background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -541,7 +553,8 @@ div.col-8.col-md-4 {
 	background: #e65c00;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	-webkit-background-clip: text;
+	background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -575,6 +588,7 @@ div.col-8.col-md-4 {
 	background: #abbaab;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.4s;
@@ -756,6 +770,7 @@ svg {
 	font-size: 3.5em;
 	background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	transition: all 0.4s;
@@ -962,7 +977,7 @@ footer {
     box-shadow: 2px 2px 10px #fff, -2px -2px 10px #fff, 2px -2px 10px #fff, -2px 2px 10px #fff,
                 4px 4px 10px rgba(255, 255, 255, 0.6),  -4px -4px 10px rgba(255, 255, 255, 0.6), 
                 4px -4px 10px rgba(255, 255, 255, 0.6),  -4px 4px 10px rgba(255, 255, 255, 0.6);
-    transform: rotate(360deg);
+    /* transform: rotate(360deg); */
 }
 
 .social_links img {

@@ -170,3 +170,20 @@
         height: 15em;
     }
 }
+
+/* Center the 'World of Colors' button at Bootstrap's lg breakpoint and below */
+@media screen and (max-width: 991.98px) {
+    .mobile-center {
+        display: flex;
+        justify-content: center;
+        margin-left: 20px !important;
+    }
+    .mobile-center a {
+        display: inline-block;
+        text-align: center;
+    }
+    .mobile-center .nav-item {
+        margin: 0;
+        display: inline-block;
+    }
+}

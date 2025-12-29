@@ -15,6 +15,7 @@ var captionText = document.getElementById("caption");
 $(document).ready(function(){
   $('.myImg').on("click", function(){
     modal.style.display = "block";
+    document.body.classList.add('modal-open-custom');
 	var newSrc = this.src;
     modalImg.attr('src', newSrc);
 	var info = this.alt;
@@ -27,11 +28,23 @@ $(document).ready(function(){
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  document.body.classList.remove('modal-open-custom');
 }
 
 $(document).keydown(function(event) { 
   if (event.keyCode == 27) { 
     modal.style.display = "none";
+    document.body.classList.remove('modal-open-custom');
   }
 });
+
+// Close modal when clicking outside the modal content
+if (modal) {
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open-custom');
+    }
+  });
+}
 /**************************************************************************************************/
