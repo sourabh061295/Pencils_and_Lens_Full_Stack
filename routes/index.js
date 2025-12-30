@@ -4,10 +4,10 @@ require('dotenv').config();
 // Require all modules
 var express       = require('express'),
 	artLinks      = require('../models/artLinks'),
-	imageLinks    = require('../models/imageLinks'),
-	specialLinks  = require('../models/specialLinks'),
+	photoLinks    = require('../models/photoLinks'),
+	portraitLinks  = require('../models/portraitLinks'),
 	Forms         = require('../models/forms'),
-	reviews       = require('../models/reviews'),
+	testimonials       = require('../models/testimonials'),
 	sendMail      = require('../utils/sendMail'),
     router        = express.Router();
 
@@ -36,7 +36,7 @@ router.get("/art", function(req, res){
 router.get("/image", function(req, res){
 	res.locals.currPage = "image";
 	// Read all image links from the database
-	imageLinks.find({}, (err, links) => {
+	photoLinks.find({}, (err, links) => {
 		if (err){ 
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect("/");
@@ -51,7 +51,7 @@ router.get("/image", function(req, res){
 router.get("/portrait", function(req, res){
 	res.locals.currPage = "portrait";
 	// Read all image links from the database
-	specialLinks.find({}, (err, links) => {
+	portraitLinks.find({}, (err, links) => {
 		if (err){ 
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect("/");
@@ -66,20 +66,20 @@ router.get("/portrait", function(req, res){
 router.get("/order", function(req, res){
 	res.locals.currPage = "order";
 	// Read all special links from the database
-	specialLinks.find({}, (err, links) => {
+	portraitLinks.find({}, (err, links) => {
 		if (err){ 
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect("/");
 			console.log(err);
 		} else { 
-			// Read all reviews from the database
-			reviews.find({}, (err, allReviews) => {
+			// Read all testimonials from the database
+			testimonials.find({}, (err, allTestimonials) => {
 				if (err){ 
 					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 					res.redirect("/");
 					console.log(err);
 				} else { 
-					res.render("order", {link_arr: links, review_list: allReviews});
+					res.render("order", {link_arr: links, review_list: allTestimonials});
 				}
 		    }); 
 		}
@@ -106,7 +106,7 @@ router.post("/order", function(req, res){
 	else
 	{
 		// Add the new comment to the database
-		reviews.create(newReview, function(err, data) {
+		testimonials.create(newReview, function(err, data) {
 			if (err){
 				req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 				res.redirect("/order/review");
@@ -123,7 +123,7 @@ router.post("/order", function(req, res){
 router.get("/order/review/:id/edit", function(req, res) {
 	res.locals.currPage = "";
 	// Get the comment to be updated and pass to the render page
-	reviews.findById(req.params.id, function(err, foundComment){
+	testimonials.findById(req.params.id, function(err, foundComment){
 		if(err) {
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect('/order');
@@ -136,7 +136,7 @@ router.get("/order/review/:id/edit", function(req, res) {
 // Update comment route
 router.put("/order/review/:id", function(req, res){
 	// Find the comment and update it with new data
-	reviews.findOneAndUpdate({_id: req.params.id}, req.body.review, {new: true}, function(err, updatedComment){
+	testimonials.findOneAndUpdate({_id: req.params.id}, req.body.review, {new: true}, function(err, updatedComment){
 		if(err) {
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect('back');
@@ -150,7 +150,7 @@ router.put("/order/review/:id", function(req, res){
 // Delete comment route
 router.delete("/order/review/:id", function(req, res) {
 	// Get the comment from the database and delete the comment
-	reviews.deleteOne({_id: req.params.id}, function(err){
+	testimonials.deleteOne({_id: req.params.id}, function(err){
 		if(err) {
 			req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 			res.redirect('/order');
@@ -238,7 +238,7 @@ router.post("/upload", function(req, res){
 		else if (newUpload['type'] == 'photo')
 		{
 			var dbElement = {'title':newUpload['title'], 'description':newUpload['description'], 'link':newUpload['link']};
-			imageLinks.create(dbElement, function(err, data) {
+			photoLinks.create(dbElement, function(err, data) {
 				if (err){
 					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 					res.redirect("/upload");
@@ -252,7 +252,7 @@ router.post("/upload", function(req, res){
 		else if (newUpload['type'] == 'portrait')
 		{
 			var dbElement = {'title':newUpload['title'], 'link':newUpload['link']};
-			specialLinks.create(dbElement, function(err, data) {
+			portraitLinks.create(dbElement, function(err, data) {
 				if (err){
 					req.flash('error','Oops!!, something went wrong. Please refresh and try again.');
 					res.redirect("/upload");

@@ -1,9 +1,9 @@
 // Require all models and packages
 var mongoose     = require("mongoose"),
 	artLinks     = require("../models/artLinks"),
-    imageLinks   = require("../models/imageLinks"),
-    specialLinks = require("../models/specialLinks"),
-	reviews      = require("../models/reviews"),
+    photoLinks   = require("../models/photoLinks"),
+    portraitLinks = require("../models/portraitLinks"),
+	testimonials      = require("../models/testimonials"),
     Forms        = require("../models/forms");
 
 // Clean Database function
@@ -15,21 +15,21 @@ function cleanDB(clearList) {
 		});
 	}
 	if((clearList.all == true) || (clearList.image == true)) {
-		imageLinks.deleteMany({}, function(err){
+		photoLinks.deleteMany({}, function(err){
 		if(err){console.log(err);}
 			console.log("Image Links deleted from DB");
 		});
 	}
 	if((clearList.all == true) || (clearList.special == true)) {
-		specialLinks.deleteMany({}, function(err){
+		portraitLinks.deleteMany({}, function(err){
 		if(err){console.log(err);}
 			console.log("Special Links deleted from DB");
 		});
 	}
 	if((clearList.all == true) || (clearList.comment == true)) {
-		reviews.deleteMany({}, function(err){
+		testimonials.deleteMany({}, function(err){
 		if(err){console.log(err);}
-			console.log("All comments/reviews deleted from DB");
+			console.log("All testimonials deleted from DB");
 		});
 	}
 	if((clearList.all == true) || (clearList.form == true)) {

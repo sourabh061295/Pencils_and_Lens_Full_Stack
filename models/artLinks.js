@@ -7,4 +7,4 @@ var artLinkSchema = new mongoose.Schema({
 	link: String
 });
 
-module.exports = mongoose.model("artLink", artLinkSchema);
+module.exports = mongoose.model("artLink", artLinkSchema, "artlinks");

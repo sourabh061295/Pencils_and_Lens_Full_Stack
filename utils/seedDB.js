@@ -1,8 +1,8 @@
 // Require all models and packages
 var mongoose     = require("mongoose"),
 	artLinks     = require("../models/artLinks"),
-    imageLinks   = require("../models/imageLinks"),
-    specialLinks = require("../models/specialLinks");
+    photoLinks   = require("../models/photoLinks"),
+    portraitLinks = require("../models/portraitLinks");
 
 // Initialize art links data
 var art_data = [
@@ -633,11 +633,11 @@ function seedDB(){
     });
      
 	//Remove all links
-    imageLinks.deleteMany({}, function(err){
+    photoLinks.deleteMany({}, function(err){
 		if(err){console.log(err);}
 		// Add initialized links to DB
         image_data.forEach(function(seed){
-			imageLinks.create(seed, function(err, link){
+			photoLinks.create(seed, function(err, link){
                 if(err){console.log(err)}
 			link.save();
 			});
@@ -646,11 +646,11 @@ function seedDB(){
     });
 
 	//Remove all links
-    specialLinks.deleteMany({}, function(err){
+    portraitLinks.deleteMany({}, function(err){
 		if(err){console.log(err);}
 		// Add initialized links to DB
         special_data.forEach(function(seed){
-            specialLinks.create(seed, function(err, link){
+            portraitLinks.create(seed, function(err, link){
                 if(err){console.log(err)}
 			link.save();
             });
