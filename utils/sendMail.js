@@ -25,16 +25,22 @@ var sendMail = function (data, file) {
 		let mailOptions = {
 			from: data.name + ' <' + data.email + '>',
 			to: process.env.ORG_MAIL,
-			subject: data.size + ' ' + data.type + ' Sketch',
-			text: 'City: ' + data.city + '\n' + data.remarks + '\nContact number: ' + data.num,
-			attachments: [
-				{
-					filename: file.file.name,
-					content: file.file.data,
-					encoding: file.file.encoding
-				}
-			]
+			// subject: data.size + ' ' + data.type + ' Sketch',
+			// text: 'City: ' + data.city + '\n' + data.remarks + '\nContact number: ' + data.num,
+			subject: "Quote request by " + data.name,
+			text: data.remarks + '\nEmail: ' + data.email + '\nContact number: ' + data.num
 		}
+
+		// Add attachment if file exists
+        if (file && file.file) {
+            mailOptions.attachments = [
+                {
+                    filename: file.file.name,
+                    content: file.file.data,
+                    encoding: file.file.encoding
+                }
+            ];
+        }
 		
 		// Proceed to send the mail
 		transporter.sendMail(mailOptions, function(err, data){

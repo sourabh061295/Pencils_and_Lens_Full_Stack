@@ -53,15 +53,15 @@
 				</div>
 				<div class="form-group">
 					<label for="phnumber">Contact No: </label>
-					<input type="tel" class="form-control" id="phnumber" name='num' pattern="[0-9]{5,10}" placeholder="+91" required>
+					<input type="tel" class="form-control" id="phnumber" name='num' pattern="^\+?[1-9]\d{1,14}$" placeholder="+xx-xxx...">
 				</div>
-				<div class="form-group input-group mb-3">
+				<!-- <div class="form-group input-group mb-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marked-alt"></i></span>
 					</div>
 					<input type="text" class="form-control" name='city' placeholder="City" aria-label="city" aria-describedby="basic-addon1" required>
-				</div>
-				<div class="d-flex justify-content-between">
+				</div> -->
+				<!-- <div class="d-flex justify-content-between">
 					<label for="sizeinput">Sketch size: </label>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="radio" name="size" id="inlineRadio0" value="a2" required>
@@ -79,9 +79,9 @@
 						<input class="form-check-input" type="radio" name="size" id="inlineRadio3" value="a5">
 						<label class="form-check-label" for="inlineRadio3">A5</label>
 					</div>
-				</div>
+				</div> -->
 				
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="sketchtype">Sketch Type: </label>
 					<select id="sketchtype" class="form-control" name='type'>
 						<option selected>Black & White</option>
@@ -91,18 +91,19 @@
 						<option>Stick Art</option>
 						<option>Other(Specify in Remarks)</option>
 					</select>
-				</div>
+				</div> -->
 				
 				<div class="form-group">
+					<label for="textAreaInput">Reference Picture: </label>
 					<div class="custom-file">
-						<input name='file' type="file" class="custom-file-input" id="uploadfile" aria-describedby="inputGroupFileAddon04" required>
-						<label class="custom-file-label" for="uploadfile">Choose reference picture</label>
+						<input name='file' type="file" class="custom-file-input" id="uploadfile" aria-describedby="inputGroupFileAddon04">
+						<label class="custom-file-label" for="uploadfile">Choose a file</label>
 				  	</div>
 				</div>	
 				
 				<div class="form-group">
-					<label for="textAreaInput">Remarks [Optional]: </label>
-					<textarea class="form-control" id="textareainput" name='remarks' rows="3" placeholder="Have any special request or comments?"></textarea>
+					<label for="textAreaInput">Request Description: </label>
+					<textarea class="form-control" id="textareainput" name='remarks' rows="3" placeholder="Please describe your request"></textarea>
 				</div>
 				
 				<div class="d-flex justify-content-center">
@@ -134,23 +135,23 @@
 </div>
 
 <!-- Comment section -->
-<div class='container'>
-	<div class='row d-flex justify-content-center'>
+<!-- <div class='container'>
+	<div class='row d-flex justify-content-center'> -->
 		<!-- New comment link -->
-		<a href='/order/review'><button class="btn btn-lg btn-outline-light mt-5"><i class="far fa-comment"></i> Add a comment</button></a>
+		<!-- <a href='/order/review'><button class="btn btn-lg btn-outline-light mt-5"><i class="far fa-comment"></i> Add a comment</button></a>
 	</div>
 	<hr class='white-hr mb-3'>
-	<div class='container commentSection'>
+	<div class='container commentSection'> -->
 	<!-- Loop through all reviews/comments -->
-	<% for(var i=0; i < review_list.length; i++) { %>
-		<div class='row d-flex justify-content-around commentRow'>
+	<!-- <% for(var i=0; i < review_list.length; i++) { %> -->
+		<!-- <div class='row d-flex justify-content-around commentRow'>
 			<div class='col-2 col-md-1 user'>
 				<i class="fas fa-user-astronaut"></i>
 			</div>
 			<div class=' col-10 comment'>
 				<div><h3><%= review_list[i].name %></h3></div>
 				<div><h6><%= review_list[i].text %></h6></div>
-			</div>
+			</div> -->
 			<!-- Edit and delete buttons -->
 			<!-- <div class='col-4 col-md-2 commentButtons'>
 				<a class='btn btn-xs btn-warning' href='/order/review/<%= review_list[i]._id %>/edit'><i class="fas fa-pencil-alt"></i></a>
@@ -158,11 +159,11 @@
 					<button class='btn btn-xs btn-danger'><i class="far fa-trash-alt"></i></button>
 				</form>
 			</div> -->
-		</div>
-		<hr class='mb-0'>
-	<% } %>
-	</div>
-</div>
+		<!-- </div>
+		<hr class='mb-0'> -->
+	<!-- <% } %> -->
+	<!-- </div>
+</div> -->
 
 <!-- Send the link array for slideshow to frontend JS -->
 <script>var link_arr = <%-JSON.stringify(link_arr)%>;</script>

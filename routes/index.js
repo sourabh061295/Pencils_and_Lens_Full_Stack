@@ -165,7 +165,12 @@ router.delete("/order/review/:id", function(req, res) {
 router.post("/order/quote", function(req, res){
 	// Get info from the form
 	var newForm = req.body;
-	newForm['file'] = req.files.file.name;
+	// Check if file exists before accessing it
+    if (newForm['file']) {
+        newForm['file'] = req.files.file.name;
+    } else {
+        newForm['file'] = "NA";
+    }
 	// Add the form details to the database
 	Forms.create(newForm, function(err, data) {
 		if (err){

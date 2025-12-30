@@ -5,8 +5,8 @@ var formSchema = new mongoose.Schema({
 	name: String,
 	email: String,
 	num: Number,
-	size: String,
-	type: String,
+	// size: String,
+	// type: String,
 	file: String,
 	remarks: String
 });
