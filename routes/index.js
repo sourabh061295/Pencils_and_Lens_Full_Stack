@@ -184,7 +184,7 @@ router.post("/order/quote", function(req, res){
 		if(status == 'error'){
 			req.flash('error',"Oops, something went wrong. Please provide valid details and try again.");
 		} else {
-			req.flash('success',"Quotation request sent successfully. You will get a notification soon on your email-id, don't forget to follow up your emails. Have a great day ahead.");
+			req.flash('success',"Request sent successfully. You will hear back from us by email soon.");
 		}
 		res.redirect('/order');
 	});

@@ -7,6 +7,7 @@ var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
+var h2 = document.querySelector("h2");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
 
@@ -53,6 +54,7 @@ function setupSquares(){
 				changeColors(clickedColor);
 				// Change color of the background
 				h1.style.background = clickedColor;
+				h2.style.background = clickedColor;
 			} else {
 				// Dont change color of the background
 				this.style.background = "#232323";

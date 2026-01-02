@@ -67,13 +67,9 @@ body::-webkit-scrollbar-thumb {
 	text-align: center;
     font-size: 1.2em;
     height: 70px;
+    width: 60%;
 	margin-top: 80px;
 	padding: 10px 50px;
-	transform: skew(-30deg);
-}
-
-.alert p{
-	transform: skew(20deg);
 }
 
 /*******************************************************************************************************************************************************/
@@ -284,6 +280,9 @@ hr {
 	color: rgba(0,0,0, 0.75);
 }
 
+.card-icon {
+	font-size: 6rem;
+}
 /* Shadow off on hover */
 .card-img-overlay:hover .card-title, #giftCard:hover .card-title {
     text-shadow: none;
@@ -874,6 +873,18 @@ hr:nth-child(3) {
 	margin: 0;
 	text-transform: uppercase;
     padding: 20px 0;
+    font-family: Philosopher, Trajan Pro;
+    transform: none;
+}
+
+#gameInstruction {
+	text-align: center;
+    font-weight: normal;
+    font-size: 2em;
+	color: white;
+	background: steelblue;
+	margin: 0;
+    padding: 10px 0;
     font-family: Philosopher, Trajan Pro;
     transform: none;
 }
