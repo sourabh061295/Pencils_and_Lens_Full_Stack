@@ -1,0 +1,9 @@
+<Files .env>
+Order allow,deny
+Deny from all
+</Files>
+PassengerAppRoot /home/u786140336/domains/pencilsandlens.com/public_html
+PassengerAppType node
+PassengerNodejs /opt/alt/alt-nodejs18/root/bin/node
+PassengerStartupFile app.js
+PassengerBaseURI /
