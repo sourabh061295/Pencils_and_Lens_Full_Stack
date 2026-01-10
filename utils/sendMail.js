@@ -24,7 +24,7 @@ var sendMail = function (data, file) {
 		// Setup mail fields
 		let mailOptions = {
 			from: data.name + ' <' + data.email + '>',
-			to: process.env.ORG_MAIL,
+			to: "pencils.and.lens@gmail.com",
 			// subject: data.size + ' ' + data.type + ' Sketch',
 			// text: 'City: ' + data.city + '\n' + data.remarks + '\nContact number: ' + data.num,
 			subject: "Quote request by " + data.name,
