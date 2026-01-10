@@ -59,6 +59,13 @@ app.use(function(req, res, next){
     next();
 });
 
+app.get('/env-check', (req, res) => {
+res.json({
+TEST_ENV: process.env.TEST_ENV || null,
+NODE_ENV: process.env.NODE_ENV || null,
+});
+});
+
 
 // Setup routes
 app.use(routes);
