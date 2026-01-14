@@ -84,8 +84,9 @@ function reset(){
 			squares[i].style.display = "none";
 		}
 	}
-	// Update the nackground color
+	// Update the background color
 	h1.style.background = "steelblue";
+	h2.style.background = "steelblue";
 }
 
 // Link the reset button to a function
