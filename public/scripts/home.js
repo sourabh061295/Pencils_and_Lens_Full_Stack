@@ -35,15 +35,23 @@ $(window).scroll(function() {
 
 //Changing background of jumbotron
 switch (currPage) {
-  case "art": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/frames.jpg)";
+  case "art": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/morocco-red.png)";
+              document.querySelector(".jumbotron").style.backgroundSize = "50%";
+              document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;
-  case "image":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/photo_gallery_new.jpeg)";
+  case "image": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/morocco-green.png)";
+                document.querySelector(".jumbotron").style.backgroundSize = "50%";
+                document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;
-  case "portrait":  document.querySelector(".jumbotron").style.backgroundImage = "url(/images/portrait_new.jpg)";
+  case "portrait": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/morocco-new-blue.png)";
+                   document.querySelector(".jumbotron").style.backgroundSize = "50%";
+                  document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;
-  case "order": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/sketch_order.jpg)";
+  case "order": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/morocco-lavendar.png)";
+                document.querySelector(".jumbotron").style.backgroundSize = "50%";
+                document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;
-  case "color": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/bonus_banner.jpg)";
+  case "color": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/color_bg.jpg)";
                             document.querySelector(".navbar").classList.add("rainbow_background");
                             break;
 }

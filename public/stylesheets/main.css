@@ -11,7 +11,10 @@ body {
     /* background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	
-	background: url("/images/star_bg.jpg");
+	background: url("/images/herringbone_cream.png");
+    background-size: 25%;
+    /* background-color: rgba(255,255,255,0.3); */
+    /* background-blend-mode: lighten; */
     overflow-x: hidden;
 }
 
@@ -215,11 +218,11 @@ a.nav-link.galleries:hover {
 /*******************************************************************************************************************************************************/
 /* Jumbotron */
 .jumbotron {
-    padding-top: 80px;
-    height: 30em;
+    padding-top: 3em;
+    height: 25em;
     text-align: center;
-    box-shadow: 0px 8px 10px #98999b;
-    background: url("/images/home_new.jpg") center no-repeat;
+    box-shadow: 0px 8px 10px rgba(172, 147, 98, 0.7);
+    background: url("/images/sketch_order.jpg") center no-repeat;
     background-size: cover;
     background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
@@ -294,7 +297,7 @@ hr {
 .card-text {
     margin: 100px 20px;
     padding: 0 20px;
-    display: none;
+    /* display: none; */
     font-weight: 700;
     text-align: center;
     color: rgba(0, 0, 0, 0.6);
@@ -302,9 +305,9 @@ hr {
 }
 
 /* Reveal on hover */
-.card-img-overlay:hover .card-text, #giftCard:hover .card-text {
+/* .card-img-overlay:hover .card-text, #giftCard:hover .card-text {
     display: block;
-}
+} */
 
 /* Card image styling */
 .card-img-overlay {
@@ -317,29 +320,29 @@ hr {
     color: #000;
     transform: scale(1.05);
     border-radius: 20px;
-    box-shadow: 5px 5px 20px rgba(3, 252, 248, 0.6), -5px -5px 20px rgba(3, 252, 248, 0.6),
-                5px -5px 20px rgba(3, 252, 248, 0.6), -5px 5px 20px rgba(3, 252, 248, 0.6),
-                10px 10px 20px rgba(3, 252, 248, 0.3), -10px -10px 20px rgba(3, 252, 248, 0.3),
-                10px -10px 20px rgba(3, 252, 248, 0.3), -10px 10px 20px rgba(3, 252, 248, 0.3);
+    box-shadow: 5px 5px 20px rgba(172, 147, 98, 0.4), -5px -5px 20px rgba(172, 147, 98, 0.4),
+                5px -5px 20px rgba(172, 147, 98, 0.4), -5px 5px 20px rgba(172, 147, 98, 0.4),
+                10px 10px 20px rgba(172, 147, 98, 0.2), -10px -10px 20px rgba(172, 147, 98, 0.2),
+                10px -10px 20px rgba(172, 147, 98, 0.2), -10px 10px 20px rgba(172, 147, 98, 0.2);
 }
 
 /* Assigning images to each card */
 #sketchCard {
-    background-image: url("/images/frames.jpg");
+    background-image: url("/images/morocco-red.png");
     background-position: center;
 	background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
 }
 
 #photoCard {
-    background-image: url("/images/photo_gallery_new.jpeg");
+    background-image: url("/images/morocco-green.png");
     background-position: center;
 	background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
 }
 
 #portCard {
-    background-image: url("/images/portrait_new.jpg");
+    background-image: url("/images/morocco-new-blue.png");
 	background-position: center;
 	background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
@@ -351,8 +354,8 @@ hr {
 
 #giftCard {
 	height: 12em;
-    background-image: url("/images/sketch_order.jpg");
-	background-size: cover;
+    background-image: url("/images/morocco-lavendar.png");
+	background-size: 50%;
 	background-position: center;
 	background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
@@ -457,6 +460,7 @@ body.modal-open-custom {
 /* Content margin addition */
 div.col-8.col-md-4 {
     margin: 20px 0;
+    padding: 0 20px;
 }
 
 /* Image thumbnail styling */
@@ -474,16 +478,16 @@ div.col-8.col-md-4 {
     object-fit: cover;
     overflow: hidden;
     transition: all 0.3s;
+    opacity: 0.9;
 }
 
 /* Hover effect for all images */
 .myImg:hover {
-    opacity: 0.7;
-    transform: scale(1.05);
-    box-shadow: 5px 5px 10px rgba(207, 207, 207, 0.1), -5px -5px 10px rgba(207, 207, 207, 0.1),
-                5px -5px 10px rgba(207, 207, 207, 0.1), -5px 5px 10px rgba(207, 207, 207, 0.1),
-                10px 10px 10px rgba(207, 207, 207, 0.1), -10px -10px 10px rgba(207, 207, 207, 0.1),
-                10px -10px 10px rgba(207, 207, 207, 0.1), -10px 10px 10px rgba(207, 207, 207, 0.1);
+    opacity: 1.0;
+    box-shadow: 5px 5px 20px rgba(172, 147, 98, 0.4), -5px -5px 20px rgba(172, 147, 98, 0.4),
+                5px -5px 20px rgba(172, 147, 98, 0.4), -5px 5px 20px rgba(172, 147, 98, 0.4),
+                10px 10px 20px rgba(172, 147, 98, 0.2), -10px -10px 20px rgba(172, 147, 98, 0.2),
+                10px -10px 20px rgba(172, 147, 98, 0.2), -10px 10px 20px rgba(172, 147, 98, 0.2);
 }
   
 /* The Modal (background) */
@@ -584,9 +588,9 @@ div.col-8.col-md-4 {
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
     font-size: 3.5em;
-	background: #abbaab;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #2c332c;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #252525, #051238);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #252525, #051238); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -699,7 +703,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 
 /* Span of the button */
 .button span {
-	color: white;
+	color: black;
 	position: absolute;
 	margin: auto 0;
 	text-transform: uppercase;
@@ -712,16 +716,16 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 	transition: all 1s ease-in-out;
 }
 
-.o2 {
+/* .o2 {
 	stroke: rgba(255, 255, 255, 0.8);
 	stroke-dasharray: 20 420;
 	stroke-dashoffset: 20;
 	transition: all 1s ease-in-out;
-}
+} */
 
 /* Hoovered effects */
 .button:hover .o1 {
-	fill: rgba(255, 255, 255, 1);
+	fill: rgb(0, 0, 0);
 }
 		
 .button:hover .o2 {
@@ -729,7 +733,7 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 }
 
 .button:hover span {
-	color: black;
+	color: white;
 }
 
 /* Animation svg */
@@ -824,17 +828,22 @@ hr:nth-child(3) {
 
 /* BONUS PAGE ========================================================= */
 #colorGame {
-    background-image: url("/images/color_game.jpg");
+    background-image: url("/images/clouds_navy.png");
+    background-color: rgb(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
 }
 
 #melody {
-    background-image: url("/images/color_rings.jpg");
+    background-image: url("/images/topography_navy.png");
+    background-size: 150%;
+    background-color: rgb(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
 }
 
-#coming {
+/* #coming {
     background-image: url("/images/coming_soon.jpg");
     background-position: center;
-}
+} */
 
 /* COLOR GUESSING GAME =============================================== */
 /* Body of the game html */

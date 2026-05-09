@@ -19,7 +19,7 @@
 			<p class="lead">Light, life, and everything in between.</p>
 		<% } else if (currPage == "portrait") { %>
 			<!-- <p class="lead">Beauty lies in the eyes of the beholder.</p> -->
-			<p class="lead">Shaded with emotion, shaped by connection.”</p>
+			<p class="lead">Shaded with emotion, shaped by connection.</p>
 		<% } %>
 	</div>
 </div>
@@ -33,7 +33,7 @@
 		<div class="row images d-flex justify-content-center">
 			<% var img_arr = link_arr.slice(); %>
 			<% while (img_arr.length != 0) { var curr_idx = Math.floor(Math.random() * (img_arr.length)); %>
-				<div class='col-8 col-md-4 col-lg-3'><img class='myImg img-thumbnail' 
+				<div class='col-8 col-md-4 col-lg-3 my-4'><img class='myImg img-thumbnail' 
 					alt="<%= img_arr[curr_idx].title %>|<%= img_arr[curr_idx].description %>" 
 					src=" <%= img_arr[curr_idx].link %> ">
 				</div>

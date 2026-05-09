@@ -10,9 +10,31 @@ var span = document.getElementsByClassName("close")[0];
 var captionText = document.getElementById("caption");
 // var descriptionText = document.getElementById("descrip");
 
+/******* Apply random rotation to each .myImg element *******/
+function applyRandomRotations() {
+  document.querySelectorAll('.myImg').forEach(function(img) {
+    // Randomly assign either +5 or -5 degrees
+    var randomRotation = Math.random() > 0.5 ? 5 : -5;
+    img.style.transform = 'rotate(' + randomRotation + 'deg)';
+    
+    // Store the random rotation value on the element
+    img.dataset.randomRotation = randomRotation;
+    
+    // Add hover event listeners
+    img.addEventListener('mouseover', function() {
+      this.style.transform = 'rotate(0deg)';
+    });
+    
+    img.addEventListener('mouseout', function() {
+      this.style.transform = 'rotate(' + this.dataset.randomRotation + 'deg)';
+    });
+  });
+}
+
 /********************************************* Modal image ****************************************/
 // Assign each image and data to the modal function for pop up effect
 $(document).ready(function(){
+  applyRandomRotations();
   $('.myImg').on("click", function(){
     modal.style.display = "block";
     document.body.classList.add('modal-open-custom');
