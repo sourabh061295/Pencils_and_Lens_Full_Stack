@@ -48,6 +48,7 @@ switch (currPage) {
                   document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;
   case "order": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/morocco-lavendar.png)";
+                document.querySelector(".jumbotron").style.backgroundColor = "rgba(255,255,255,0.4)";
                 document.querySelector(".jumbotron").style.backgroundSize = "50%";
                 document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                           break;

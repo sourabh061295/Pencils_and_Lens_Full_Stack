@@ -60,9 +60,9 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     border-radius: 0.5em;
-    background: #2C3E50;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #554023;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c99846, #554023);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c99846, #554023); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* Alert messages styling */
@@ -78,7 +78,9 @@ body::-webkit-scrollbar-thumb {
 /*******************************************************************************************************************************************************/
 /* Navbar */
 .navbar {
-    background: #000;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000); 
+    background: linear-gradient(to right, #434343, #000000); 
 	font-family: Righteous;
 }
 
@@ -257,7 +259,7 @@ h1:hover {
 /* Horizontal rule styling */
 hr {
     width: 100%;
-    height: 12px;
+    height: 2px;
 	margin-bottom: 0;
     border: 0;
     box-shadow: inset 0 10px 10px -14px rgba(0, 0, 0, 0.8);
@@ -495,14 +497,19 @@ div.col-8.col-md-4 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 25px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    overflow: hidden; /* Prevent scroll */
+    background-color: rgba(0,0,0,0.7); /* Dark transparent background */
+    backdrop-filter: blur(2px);
+}
+
+#img01 {
+    background-color: transparent;
+    border: none;
 }
 
 /* Disable scrollbar */
@@ -514,51 +521,35 @@ div.col-8.col-md-4 {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
 }
 
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption {
     animation-name: zoom;
-    animation-duration: 0.6s;
+    animation-duration: 0.8s;
 }
 
 /* Styling the caption */
 #caption {
-	margin-top: 20px;
+	margin-top: 10px;
 	font-size: 2em;
 	text-align: center;
 	font-weight: 700;
-	background: #00c3ff;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #ffff1c, #00c3ff);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, #ffff1c, #00c3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #00fff0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0083fe, #00fff0);  
+    background: linear-gradient(to right, #0083fe, #00fff0); 
 	background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-/* Styling the description in modal */
-#descrip {
-	padding: 0 10em;
-	margin: 15px 0 50px 0;
-	font-size: 1.5em;
-	text-align: center;
 }
 
 .fa-quote-left, .fa-quote-right {
 	font-size: 0.6em;
 	vertical-align: top;
-}
-
-/* Apply color gradient to descrioption */
-#descrip, #descrip > i {
-	background: #e65c00;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /* The Close Button */
@@ -588,9 +579,9 @@ div.col-8.col-md-4 {
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
     font-size: 3.5em;
-	background: #2c332c;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #252525, #051238);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #252525, #051238); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #BA8B02;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #181818, #BA8B02);  
+    background: linear-gradient(to right, #181818, #BA8B02); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -600,7 +591,7 @@ div.col-8.col-md-4 {
 /* Section underlines */
 .tabs > hr {
     width: 80%;
-    box-shadow: inset 0 10px 10px -14px rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 10px 10px -14px rgba(0, 0, 0, 0.8);
 }
 
 /* Image slideshow */
@@ -612,38 +603,12 @@ div.col-8.col-md-4 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border-radius: 15px ;
-    box-shadow: 5px 5px 10px #f0f0f0;
-}
-
-/* Info section */
-.info {
-    color: rgba(255, 255, 255, 0.726);
-    text-align: center;
-    font-size: 1.5em;
-    padding: 0 50px;
-    margin-bottom: 400px;
-}
-
-/* Details section */
-.details {
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-	font-family: Kurale;
-    font-size: 1.5em;
-}
-
-.details > ul {
-    padding: 0;
-    list-style: none;
-    line-height: 2.5em;
-    font-size: 0.8em;
 }
 
 /* Modify form components */
 form {
     font-size: 1.4em;
-    color: white;
+    color: #110011;
 }
 
 /* Form focus styling */
@@ -655,42 +620,6 @@ form {
 
 input[type="tel"]:invalid, input[type="email"]:invalid {
 	color: red;
-}
-
-/* Comment section styling */
-.commentSection {
-	background: rgba(255, 255, 255, 0.8);
-	border-radius: 5px;
-	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6) inset, 2px -2px 4px rgba(0, 0, 0, 0.6) inset, -2px 2px 4px rgba(0, 0, 0, 0.6) inset, -2px -2px 4px rgba(0, 0, 0, 0.6) inset;
-}
-
-/* User icon styling */
-.user {
-	line-height: 2em;
-	text-align: center;
-	font-size: 2.5em;
-}
-
-/* Styling each comment */
-.comment {
-	padding: 15px 0 0 0;
-	font-family: Expletus Sans, Maiandra GD;
-	text-transform: capitalize;	
-}
-
-/* Styling the edit and delete buttons */
-.commentButtons {
-	padding: 10px;
-	text-align: center;
-	opacity: 0;
-	transition: 0.4s all;
-}
-
-
-/* Show buttons when comment is hovered */
-.commentRow:hover .commentButtons {
-	opacity: 0.9;
-	transform: translateY(15px);
 }
 
 /* Buttons for adding instances */
@@ -707,29 +636,8 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 	position: absolute;
 	margin: auto 0;
 	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
-/* Polylines */
-.o1 {
-	fill: rgba(255, 255, 255, 0);
-	transition: all 1s ease-in-out;
-}
-
-/* .o2 {
-	stroke: rgba(255, 255, 255, 0.8);
-	stroke-dasharray: 20 420;
-	stroke-dashoffset: 20;
-	transition: all 1s ease-in-out;
-} */
-
-/* Hoovered effects */
-.button:hover .o1 {
-	fill: rgb(0, 0, 0);
-}
-		
-.button:hover .o2 {
-	stroke-dashoffset: -420;
+	letter-spacing: 2px;
+	transition: all 0.3s;
 }
 
 .button:hover span {
@@ -740,13 +648,20 @@ input[type="tel"]:invalid, input[type="email"]:invalid {
 svg {
 	height: 55px;
 	width: 150px;
-	fill: none;
 	stroke-width: 5;
 	border-radius: 5px;
+    background: #554023;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c99846, #554023); 
+    background: linear-gradient(to right, #c99846, #554023); 
+    opacity: 0.5;
+    transition: all 0.3s;
 }
 
-/* CREATE AND EDIT COMMENT PAGE ======================================*/
-/* Create and Edit form styling */
+.button:hover svg, svg:hover {
+    opacity: 1;
+}
+
+/* UPLOAD PAGE ======================================*/
 /* Spacing from the top navbar */
 .reviewForm {
 	padding-top: 50px;
@@ -761,6 +676,11 @@ svg {
 /* Adjusting the elements to center */
 .reviewForm label, .reviewForm .btn-tray, .reviewForm .upload_option {
 	margin: 0 25%;
+    color: #110011;
+}
+
+.reviewForm .btn-tray a {
+    color: #110011;
 }
 
 /* Header styling */
@@ -770,18 +690,14 @@ svg {
 	color: white;
 	text-align: center;
 	font-family: Righteous;
-	font-size: 3.5em;
-	background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+	font-size: 5em;
+    background: #BA8B02;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #181818, #BA8B02);  
+    background: linear-gradient(to right, #181818, #BA8B02); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	transition: all 0.4s;
-}
-
-/* Header hover effect */
-.reviewForm h2:hover {
-	transform: scale(1.2);
 }
 
 /* Style hr to show up white */
@@ -989,15 +905,16 @@ footer {
 
 .social_links {
     border-radius: 50%;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s linear;
 }
 
 .social_links:hover {
     cursor: pointer;
-    box-shadow: 2px 2px 10px #fff, -2px -2px 10px #fff, 2px -2px 10px #fff, -2px 2px 10px #fff,
-                4px 4px 10px rgba(255, 255, 255, 0.6),  -4px -4px 10px rgba(255, 255, 255, 0.6), 
-                4px -4px 10px rgba(255, 255, 255, 0.6),  -4px 4px 10px rgba(255, 255, 255, 0.6);
-    /* transform: rotate(360deg); */
+    box-shadow: 5px 5px 20px rgba(172, 147, 98, 0.4), -5px -5px 20px rgba(172, 147, 98, 0.4),
+                5px -5px 20px rgba(172, 147, 98, 0.4), -5px 5px 20px rgba(172, 147, 98, 0.4),
+                10px 10px 20px rgba(172, 147, 98, 0.2), -10px -10px 20px rgba(172, 147, 98, 0.2),
+                10px -10px 20px rgba(172, 147, 98, 0.2), -10px 10px 20px rgba(172, 147, 98, 0.2);
+    /* transform: rotatey(360deg); */
 }
 
 .social_links img {
@@ -1008,12 +925,12 @@ footer {
 .copyright {
     margin-top: 15px;
     text-align: center;
-    color: rgba(233,236,239,0.5);
+    color: #333333;
     transition: all 0.4s;
 }
 
 .copyright:hover {
-    color: #e9ecef;
+    color: rgb(77, 64, 38)
 }
 
 .copyright:last-child {
