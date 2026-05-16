@@ -7,14 +7,8 @@ html {
 
 body {
     font-family: Expletus Sans, Trajan Pro;
-    /* background: #000000;  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	
 	background: url("/images/herringbone_cream.png");
     background-size: 25%;
-    /* background-color: rgba(255,255,255,0.3); */
-    /* background-blend-mode: lighten; */
     overflow-x: hidden;
 }
 
@@ -100,7 +94,6 @@ nav {
     padding: 0;
     text-align: center;
     transition: all 1s ease-in-out;
-    /* animation: rotation 3s infinite linear; */
 }
 
 /* Logo hover effect */
@@ -238,7 +231,8 @@ a.nav-link.galleries:hover {
 h1 {
     margin-top: 0.5em;
     font-size: 9em;
-    font-family: Spirax, Ink Free;
+    /* font-family: Spirax, Ink Free; */
+    font-family: 'Dancing Script', cursive;
     letter-spacing: 1px;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.3), 4px 8px 4px rgba(0, 0, 0, 0.1), 6px 12px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
@@ -252,7 +246,7 @@ h1:hover {
 /* Sub heading styling */
 .lead {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-    font-family: Expletus Sans, Gabriola;
+    font-family: 'Expletus Sans', 'Gabriola';
     font-size: 1.2em;
 }
 
@@ -278,9 +272,10 @@ hr {
 /* Card title styling */
 .card-title {
     margin: 10px;
+    letter-spacing: 2px;
     font-size: 3em;
-	font-family: Cormorant Unicase;
-	font-weight: 500;
+	font-family: "Caveat Brush", cursive;
+	font-weight: 700;
     text-align: center;
 	color: rgba(0,0,0, 0.75);
 }
@@ -537,6 +532,8 @@ div.col-8.col-md-4 {
 #caption {
 	margin-top: 10px;
 	font-size: 2em;
+    font-family: "Caveat Brush", cursive;
+    letter-spacing: 1.5px;
 	text-align: center;
 	font-weight: 700;
 	background: #00fff0;  /* fallback for old browsers */
@@ -575,7 +572,7 @@ div.col-8.col-md-4 {
 /* Section titles */
 .tabs {
     height: 2.5em;
-    font-family: Righteous, Ink Free;
+      font-family: "Caveat Brush", cursive;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
     font-size: 3.5em;
@@ -689,7 +686,8 @@ svg {
 	margin-bottom: 50px;
 	color: white;
 	text-align: center;
-	font-family: Righteous;
+	font-family: 'Dancing Script', cursive;
+    font-weight: 1000;
 	font-size: 5em;
     background: #BA8B02;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #181818, #BA8B02);  
@@ -1029,4 +1027,15 @@ footer {
     to {
       transform: rotateY(359deg);
     }
+}
+
+/* Remove skew on collapsed navbar */
+@media (max-width: 991px) {
+	a.nav-link.galleries {
+		transform: skew(0deg);
+	}
+	
+	a.nav-link.galleries li {
+		transform: skew(0deg);
+	}
 }
