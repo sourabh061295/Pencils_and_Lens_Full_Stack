@@ -46,4 +46,4 @@ function changeImg() {
 }
 
 // Trigger Slideshow, interval - 3 seconds
-setInterval(changeImg, 2500);
+setInterval(changeImg, 3000);

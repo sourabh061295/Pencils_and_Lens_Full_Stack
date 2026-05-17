@@ -13,7 +13,10 @@ var captionText = document.getElementById("caption");
 function applyRandomRotations() {
   document.querySelectorAll('.myImg').forEach(function(img) {
     // Randomly assign either +5 or -5 degrees
-    var randomRotation = Math.random() > 0.5 ? 5 : -5;
+    var randomRotation;
+    do {
+      randomRotation = (Math.random() * 10) - 10;
+    } while (Math.abs(randomRotation) < 0.5);
     img.style.transform = 'rotate(' + randomRotation + 'deg)';
     
     // Store the random rotation value on the element
