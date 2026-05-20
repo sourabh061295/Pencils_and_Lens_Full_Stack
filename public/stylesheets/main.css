@@ -231,7 +231,6 @@ a.nav-link.galleries:hover {
 h1 {
     margin-top: 0.5em;
     font-size: 9em;
-    /* font-family: Spirax, Ink Free; */
     font-family: 'Dancing Script', cursive;
     letter-spacing: 1px;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.3), 4px 8px 4px rgba(0, 0, 0, 0.1), 6px 12px 6px rgba(0, 0, 0, 0.1);
@@ -586,7 +585,7 @@ div.col-8.col-md-4 {
     font-family: "Caveat Brush", cursive;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
-    font-size: 3.5em;
+    font-size: 5em;
 	background: #BA8B02;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #181818, #BA8B02);  
     background: linear-gradient(to right, #181818, #BA8B02); 
@@ -604,10 +603,9 @@ div.col-8.col-md-4 {
 
 /* Image slideshow */
 #imageDisplay {
-    display: block;
+    display: none;
     border-radius: 10%;
 	background-color: rgba(0,0,0,0);
-    background-image: url("/images/portrait.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -617,10 +615,20 @@ div.col-8.col-md-4 {
                 10px -10px 20px rgba(172, 147, 98, 0.2), -10px 10px 20px rgba(172, 147, 98, 0.2);
 }
 
+#imageDisplay.loaded {
+    display: block;
+}
+
 /* Modify form components */
 form {
     font-size: 1.4em;
     color: #110011;
+}
+
+input, textArea, #uploadfile, .custom-file-label {
+    background: #9B8D62;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E8E0D0, #9B8D62);
+    background: linear-gradient(to right, #E8E0D0, #9B8D62); 
 }
 
 /* Form focus styling */
@@ -808,14 +816,14 @@ hr:nth-child(3) {
 #gameTitle {
 	text-align: center;
 	line-height: 1.1;
-    font-weight: normal;
+    font-weight: 200;
     font-size: 4em;
 	color: white;
 	background: steelblue;
 	margin: 0;
 	text-transform: uppercase;
     padding: 20px 0;
-    font-family: Philosopher, Trajan Pro;
+	font-family: 'Righteous';
     transform: none;
 }
 
@@ -827,7 +835,8 @@ hr:nth-child(3) {
 	background: steelblue;
 	margin: 0;
     padding: 10px 0;
-    font-family: Philosopher, Trajan Pro;
+	font-family: "Caveat Brush", cursive;
+    letter-spacing: 1px;
     transform: none;
 }
 
@@ -905,10 +914,141 @@ hr:nth-child(3) {
 }
 
 /* Disclaimer */
-h4 {
-	font-family: Graduate;
+h3 {
+	font-family: 'Righteous';
 	text-align: center;
 	color: rgba(255, 255, 255, 0.74);
+    letter-spacing: 2px;
+}
+
+/*******************************************************************************************************************************************************/
+/* YouTube Video Gallery */
+
+.video-player-container {
+	display: flex;
+	gap: 15px;
+	width: 100%;
+	height: 500px;
+}
+
+.main-video-wrapper {
+	flex: 1.5;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-playlist {
+	flex: 1;
+    background: #9B8D62;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #E8E0D0, #9B8D62);
+    background: linear-gradient(to left, #E8E0D0, #9B8D62); 
+	border-radius: 8px;
+	overflow-y: auto;
+	padding: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.playlist-items {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.playlist-item {
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 6px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	border: 2px solid transparent;
+	padding: 0;
+	height: auto;
+}
+
+.playlist-item:hover {
+	background: rgba(203, 174, 219);
+	border-color: rgba(203, 174, 219);
+	transform: translateX(5px);
+}
+
+.playlist-item.active {
+	background: rgba(203, 174, 219);
+	border-color: rgba(203, 174, 219);
+}
+
+.playlist-item-thumbnail {
+	width: 100%;
+	height: 60px;
+	object-fit: cover;
+	display: block;
+	border-radius: 4px;
+}
+
+.playlist-item-title {
+	padding: 6px 8px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #e9ecef;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: rgba(0, 0, 0, 0.5);
+    font-family: 'Righteous';
+    letter-spacing: 1px;
+}
+
+/* Scrollbar styling for playlist */
+.video-playlist::-webkit-scrollbar {
+	width: 6px;
+}
+
+.video-playlist::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb {
+	background: rgba(203, 174, 219, 0.5);
+	border-radius: 10px;
+}
+
+.video-playlist::-webkit-scrollbar-thumb:hover {
+	background: rgba(203, 174, 219, 0.8);
+}
+
+@media (max-width: 992px) {
+	.video-player-container {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.main-video-wrapper {
+		flex: 1;
+		min-height: 350px;
+	}
+
+	.video-playlist {
+		flex: 1;
+		height: 300px;
+	}
+}
+
+@media (max-width: 576px) {
+	.video-player-container {
+		flex-direction: column;
+		height: auto;
+		gap: 10px;
+	}
+
+	.main-video-wrapper {
+		min-height: 250px;
+	}
+
+	.video-playlist {
+		height: 250px;
+		max-height: 250px;
+	}
 }
 
 /*******************************************************************************************************************************************************/

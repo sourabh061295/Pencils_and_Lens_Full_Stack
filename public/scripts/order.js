@@ -21,16 +21,24 @@ var img_list = [ "https://i.pinimg.com/originals/71/a2/63/71a2634da050395eec1595
 // Index
 var idx = 0;
 
-// Extract only link from array of objects retrieved from the database
-// link_arr.forEach(function(link){
-// 	img_list.push(link.link);
-// });
-
 // File upload text update
 $('input[type="file"]').change(function(e){
 	var fileName = e.target.files[0].name;
 	$('.custom-file-label').html(fileName);
 });
+
+// Function to initialize the first image on page load
+function initializeFirstImage() {
+    const img = new Image();
+    img.onload = function() {
+        $('#imageDisplay').css("background-image", "url("+img_list[idx]+")").addClass('loaded');
+    };
+    img.onerror = function() {
+        // If image fails to load, still show the element
+        $('#imageDisplay').css("background-image", "url("+img_list[idx]+")").addClass('loaded');
+    };
+    img.src = img_list[idx];
+}
 
 // Function to change image every interval
 function changeImg() {
@@ -45,5 +53,69 @@ function changeImg() {
     idx = ((idx+1) % img_list.length);
 }
 
-// Trigger Slideshow, interval - 3 seconds
-setInterval(changeImg, 3000);
+// Initialize first image when DOM is ready
+$(document).ready(function() {
+    initializeFirstImage();
+    // Trigger Slideshow, interval - 3 seconds (after first image is loaded)
+    setInterval(changeImg, 3000);
+    
+    // Initialize YouTube Gallery
+    if ($('#videoPlaylist').length > 0) {
+        initializeYouTubeGallery();
+    }
+});
+
+/******** YouTube Video Gallery ********/
+
+// Sample video IDs from your channel (replace with your video IDs)
+var youtubeVideos = [
+    { id: 'yMryXhZI2GY', title: 'A Tribute' },
+    { id: 'rH-kMooW-IQ', title: 'DiVo' },
+    { id: '7Wt-mZU0SxY', title: 'A MAD Artist' },
+    { id: 'ieUMoQip47s', title: 'The process' },
+    { id: '_WheJ1l0uhg', title: 'Ronin' },
+    { id: 'bm23VkCBDiU', title: 'God of Thunder' },
+    { id: 'u6X10Gr6wok', title: 'God of Cricket' },
+    { id: 'aVdJhpTLl6Y', title: 'Joker' }
+];
+
+function initializeYouTubeGallery() {
+    // Shuffle and select random videos for the playlist
+    var shuffled = youtubeVideos.sort(function() { return 0.5 - Math.random(); });
+    var selectedVideos = shuffled;
+    
+    // Play first video in main player
+    if (selectedVideos.length > 0) {
+        playVideo(selectedVideos[0].id, 0);
+    }
+    
+    // Create playlist
+    var playlistContainer = $('#videoPlaylist');
+    playlistContainer.empty();
+    
+    selectedVideos.forEach(function(video, index) {
+        var playlistItem = $('<div class="playlist-item" data-video-id="' + video.id + '" data-index="' + index + '">' +
+            '<img src="https://img.youtube.com/vi/' + video.id + '/hqdefault.jpg" alt="' + video.title + '" class="playlist-item-thumbnail">' +
+            '<div class="playlist-item-title">' + video.title + '</div>' +
+            '</div>');
+        
+        playlistItem.on('click', function() {
+            var videoId = $(this).data('video-id');
+            var itemIndex = $(this).data('index');
+            playVideo(videoId, itemIndex);
+            // Update active state
+            $('.playlist-item').removeClass('active');
+            $(this).addClass('active');
+        });
+        
+        if (index === 0) {
+            playlistItem.addClass('active');
+        }
+        
+        playlistContainer.append(playlistItem);
+    });
+}
+
+function playVideo(videoId, index) {
+    $('#mainVideoPlayer').attr('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=0&rel=0');
+}
