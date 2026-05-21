@@ -182,7 +182,7 @@ router.post("/order/quote", function(req, res){
 	// Send out an email with the quotation request details
 	sendMail(req.body, req.files).then(function(status){
 		if(status == 'error'){
-			req.flash('error',"Oops, something went wrong. Please provide valid details and try again.");
+			req.flash('error',"Oops, something went wrong. Please try again.");
 		} else {
 			req.flash('success',"Request sent successfully. You will hear back from us by email soon.");
 		}

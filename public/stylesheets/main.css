@@ -214,7 +214,7 @@ a.nav-link.galleries:hover {
 /* Jumbotron */
 .jumbotron {
     padding-top: 3em;
-    height: 25em;
+    height: 26em;
     text-align: center;
     box-shadow: 0px 8px 10px rgba(172, 147, 98, 0.7);
     background: url("/images/sketch_order.jpg") center no-repeat;
@@ -230,7 +230,7 @@ a.nav-link.galleries:hover {
 /* Page heading */
 h1 {
     margin-top: 0.5em;
-    font-size: 9em;
+    font-size: 10em;
     font-family: 'Dancing Script', cursive;
     letter-spacing: 1px;
     text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.3), 4px 8px 4px rgba(0, 0, 0, 0.1), 6px 12px 6px rgba(0, 0, 0, 0.1);
@@ -274,7 +274,7 @@ hr {
 .card-title {
     margin: 10px;
     letter-spacing: 2px;
-    font-size: 3em;
+    font-size: 3.5em;
 	font-family: "Caveat Brush", cursive;
 	font-weight: 700;
     text-align: center;
@@ -309,6 +309,11 @@ hr {
 
 /* Card image styling */
 .card-img-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
     background-size: cover;
     transition: all 0.4s;
 }
@@ -318,10 +323,6 @@ hr {
     color: #000;
     transform: scale(1.05);
     border-radius: 20px;
-    box-shadow: 5px 5px 20px rgba(172, 147, 98, 0.4), -5px -5px 20px rgba(172, 147, 98, 0.4),
-                5px -5px 20px rgba(172, 147, 98, 0.4), -5px 5px 20px rgba(172, 147, 98, 0.4),
-                10px 10px 20px rgba(172, 147, 98, 0.2), -10px -10px 20px rgba(172, 147, 98, 0.2),
-                10px -10px 20px rgba(172, 147, 98, 0.2), -10px 10px 20px rgba(172, 147, 98, 0.2);
     animation: panDiagonal 15s linear infinite;
 }
 
@@ -365,12 +366,6 @@ hr {
 	background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
     clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 0% 85%);
-}
-
-#giftCard .card-title {
-	color: rgba(0,0,0, 0.75);
-    font-size: 3em;
-    text-align: center;
 }
 
 /* Card sub line styling */
@@ -604,8 +599,10 @@ div.col-8.col-md-4 {
 /* Image slideshow */
 #imageDisplay {
     display: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
     border-radius: 10%;
-	background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -781,6 +778,11 @@ hr:nth-child(3) {
 
 /* BONUS PAGE ========================================================= */
 #colorGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
     background-image: url("/images/clouds_navy.png");
     background-color: rgb(255, 255, 255, 0.2);
     background-blend-mode: lighten;
@@ -789,6 +791,11 @@ hr:nth-child(3) {
 }
 
 #melody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
     background-image: url("/images/topography_navy.png");
     background-size: 150%;
     background-color: rgb(255, 255, 255, 0.2);
@@ -952,6 +959,15 @@ h3 {
 	border-radius: 8px;
 	overflow: hidden;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	aspect-ratio: 16 / 9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-video-wrapper iframe {
+	width: 100%;
+	height: 100%;
 }
 
 .video-playlist {
@@ -995,7 +1011,7 @@ h3 {
 
 .playlist-item-thumbnail {
 	width: 100%;
-	height: 60px;
+	height: 120px;
 	object-fit: cover;
 	display: block;
 	border-radius: 4px;
@@ -1041,12 +1057,14 @@ h3 {
 
 	.main-video-wrapper {
 		flex: 1;
-		min-height: 350px;
+		aspect-ratio: 16 / 9;
+		min-height: 300px;
 	}
 
 	.video-playlist {
 		flex: 1;
-		height: 300px;
+		max-height: 200px;
+		overflow-y: auto;
 	}
 }
 
@@ -1058,12 +1076,13 @@ h3 {
 	}
 
 	.main-video-wrapper {
-		min-height: 250px;
+		aspect-ratio: 16 / 9;
+		min-height: 200px;
 	}
 
 	.video-playlist {
-		height: 250px;
-		max-height: 250px;
+		height: 150px;
+		max-height: 150px;
 	}
 }
 
@@ -1121,17 +1140,29 @@ footer {
 
 /* Home page */
 @media screen and (max-width: 1530px) {
+
+    .jumbotron {
+        height: 24em;
+    }
+
     h1 {
-        font-size: 7em;
+        font-size: 8em;
     }
 
     .card-title {
         font-size: 3em;
     }
-	
-	.card-text {
-		padding: 0; 
-	} 
+}
+
+@media screen and (max-width: 810px) {
+
+    .jumbotron {
+        height: 20em;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
 }
 
 /* Fade effect for pages */
