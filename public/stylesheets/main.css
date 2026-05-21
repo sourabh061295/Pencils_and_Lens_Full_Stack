@@ -1005,6 +1005,7 @@ h3 {
 }
 
 .playlist-item.active {
+    display: none;
 	background: rgba(203, 174, 219);
 	border-color: rgba(203, 174, 219);
 }
@@ -1163,6 +1164,18 @@ footer {
     h1 {
         font-size: 6em;
     }
+
+    .tabs {
+		font-size: 4em;
+	}
+
+    .navbar-brand {
+        width: 3em;
+    }
+
+    .navbar-brand img{
+        transform: scale(0.9);
+    }
 }
 
 /* Fade effect for pages */
@@ -1244,6 +1257,10 @@ footer {
 	a.nav-link.galleries li {
 		transform: skew(0deg);
 	}
+
+    #giftCard {
+        background-size: 200%;;
+    }
 }
 
 /* Horizontal Pan Effect */

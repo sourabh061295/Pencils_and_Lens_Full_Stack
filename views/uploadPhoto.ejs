@@ -2,7 +2,7 @@
 
 <%- include("./partials/flash_msgs") %>
 
-<!-- Add Review/Comment form -->
+<!-- Upload an instance form -->
 <div class='reviewForm'>
 	<h2>Upload a photo</h2>
 	<form action="/upload" method="POST">
@@ -10,10 +10,6 @@
 			<label>Title:</label>
 			<input type="text" name='upload[title]' class="form-control" required>
 		</div><br>
-		<!-- <div class="form-group">
-			<label>Description</label>
-			<textarea name='upload[description]' rows='4' class="form-control"></textarea>
-		</div><br> -->
 		<div class="form-group">
 			<label>Link:</label>
 			<input type="text" name='upload[link]' class="form-control" required>
