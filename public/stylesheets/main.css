@@ -682,6 +682,22 @@ svg {
 }
 
 /* UPLOAD PAGE ======================================*/
+/* Custom styled radio buttons */
+.upload_option .form-check {
+    cursor: pointer;
+}
+
+.upload_option .form-check-input {
+    accent-color: #7eef68;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.upload_option .form-check-label {
+    cursor: pointer;
+    margin-left: 8px;
+}
+
 /* Spacing from the top navbar */
 .reviewForm {
 	padding-top: 50px;
