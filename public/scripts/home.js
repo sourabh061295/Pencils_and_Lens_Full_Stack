@@ -32,6 +32,20 @@ $(window).scroll(function() {
     }
 });
 
+$(document).ready(function () {
+    $(document).click(function (event) {
+        var clickover = $(event.target);
+        var navbarCollapse = $("#navbarSupportedContent");
+        var _opened = navbarCollapse.hasClass("show");
+
+        if (_opened && 
+            !clickover.closest(".navbar-collapse").length && 
+            !clickover.closest(".navbar-toggler").length) {
+            $(".navbar-toggler").click();
+        }
+    });
+});
+
 
 //Changing background of jumbotron
 switch (currPage) {

@@ -64,5 +64,5 @@ app.use(routes);
 
 // Start the server
 app.listen(process.env.PORT || 3000, process.env.IP, () => console.log('Pencils and Lens is online.....'));
-
+// app.listen(3000, '0.0.0.0');
 module.exports = app;

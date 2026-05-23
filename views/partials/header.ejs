@@ -48,11 +48,14 @@
 		<!-- Navbar buttons -->
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto d-flex justify-content-between">
+				<a class="nav-link home" id="<%= (currPage == 'home')?'activePage':'' %>" href="/">
+					<li class="nav-item">Home</li>
+				</a>
 				<a class="nav-link galleries" id="<%= (currPage == 'art')?'activePage':'' %>" href="/art">
 					<li class="nav-item">Artworks</li>
 				</a>
 				<a class="nav-link galleries" id="<%= (currPage == 'image')?'activePage':'' %>" href="/image">
-					<li class="nav-item">Photos</li>
+					<li class="nav-item">Photography</li>
 				</a>
 				<a class="nav-link galleries" id="<%= (currPage == 'portrait')?'activePage':'' %>" href="/portrait">
 					<li class="nav-item">Portraits</li>
