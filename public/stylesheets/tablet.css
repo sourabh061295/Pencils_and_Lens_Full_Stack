@@ -1,0 +1,74 @@
+@media screen and (max-width: 1530px) {
+
+    .jumbotron {
+        height: 24em;
+    }
+
+    h1 {
+        font-size: 8em;
+    }
+
+    .card-title {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 991px) {
+
+	a.nav-link.galleries, a.nav-link.home {
+		transform: skew(0deg);
+        clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 0% 85%);
+	}
+	
+	a.nav-link.galleries li, a.nav-link.home li {
+		transform: skew(0deg);
+	}
+
+    a.nav-link.home {
+        display: block;
+    }
+
+    #giftCard {
+        background-size: 200%;;
+    }
+
+    .video-player-container {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.main-video-wrapper {
+		flex: 1;
+		aspect-ratio: 16 / 9;
+		min-height: 300px;
+	}
+
+	.video-playlist {
+		flex: 1;
+		max-height: 200px;
+		overflow-y: auto;
+	}
+}
+
+@media screen and (max-width: 810px) {
+
+    .jumbotron {
+        height: 20em;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
+
+    .tabs {
+		font-size: 4em;
+	}
+
+    .navbar-brand {
+        width: 3em;
+    }
+
+    .navbar-brand img{
+        transform: scale(0.9);
+    }
+}

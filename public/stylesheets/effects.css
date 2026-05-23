@@ -1,0 +1,88 @@
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Fade effect for pages */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+/* Rainbow navbar */
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+/* Modal image display */
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* Logo Rotation */
+@keyframes rotation {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(359deg);
+    }
+}
+
+/* Horizontal Pan Effect */
+@keyframes panHorizontal {
+    from { background-position: 0% center; }
+    to   { background-position: 100% center; }
+}
+
+/* Vertical Down Pan Effect */
+@keyframes panDown {
+    from { background-position: center 100%; }
+    to   { background-position: center 0%; }
+}
+
+/* Vertical Up Pan Effect */
+@keyframes panUp {
+    from { background-position: center 0%; }
+    to   { background-position: center 100%; }
+}
+
+/* Diagonal Pan Effect*/
+@keyframes panDiagonal {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}

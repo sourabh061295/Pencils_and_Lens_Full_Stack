@@ -116,6 +116,22 @@
     .reviewForm label, .reviewForm .btn-tray, .reviewForm .upload_option {
 	    margin: 0 10%;
     }
+
+    	.video-player-container {
+		flex-direction: column;
+		height: auto;
+		gap: 10px;
+	}
+
+	.main-video-wrapper {
+		aspect-ratio: 16 / 9;
+		min-height: 200px;
+	}
+
+	.video-playlist {
+		height: 150px;
+		max-height: 150px;
+	}
 }
 
 /* For smaller phones */
