@@ -26,21 +26,21 @@
 			<form action='/order/quote' method='POST' enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="nameinput">Name: </label>
-					<input type="text" class="form-control" id="nameinput" name='name' required>
+					<input type="text" class="form-control" id="nameinput" name='name' autocomplete="name" required>
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="emailinput">E-mail: </label>
-					<input type="email" class="form-control" id="emailinput" placeholder="name@example.com" name='email' required>
+					<input type="email" class="form-control" id="emailinput" placeholder="name@example.com" name='email' autocomplete="email" required>
 				</div>
 				<br>
 				<div class="form-group">
 					<label for="phnumber">Contact No: </label>
-					<input type="tel" class="form-control" id="phnumber" name='num' pattern="^\+?[1-9]\d{1,14}$" placeholder="+xx-xxx...">
+					<input type="tel" class="form-control" id="phnumber" name='num' pattern="^\+?[1-9]\d{1,14}$" placeholder="+xx-xxx..." autocomplete="tel">
 				</div>
 				<br>
 				<div class="form-group">
-					<label for="textAreaInput">Reference Picture: </label>
+					<label for="uploadfile">Reference Picture: </label>
 					<div class="custom-file">
 						<input name='file' type="file" class="custom-file-input" id="uploadfile" aria-describedby="inputGroupFileAddon04">
 						<label class="custom-file-label" for="uploadfile">Choose a file</label>
@@ -49,7 +49,7 @@
 				<br>
 				<div class="form-group">
 					<label for="textAreaInput">Request Description: </label>
-					<textarea class="form-control" id="textareainput" name='remarks' rows="3" placeholder="Please describe your request"></textarea>
+					<textarea class="form-control" id="textAreaInput" name='remarks' rows="3" placeholder="Please describe your request"></textarea>
 				</div>
 				<div class="d-flex justify-content-center">
 					<button type="submit" class="btn btn-lg btn-outline-success form-group"><i class="fas fa-check"></i>  Submit</button>
