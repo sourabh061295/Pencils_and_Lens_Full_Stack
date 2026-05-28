@@ -48,6 +48,11 @@
 		max-height: 200px;
 		overflow-y: auto;
 	}
+
+    #imageDisplay {
+        min-height: 500px;
+        aspect-ratio: 4 / 3;
+    }
 }
 
 @media screen and (max-width: 810px) {

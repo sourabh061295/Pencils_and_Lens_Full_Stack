@@ -289,13 +289,11 @@ hr {
 	font-size: 6rem;
 }
 
-/* Shadow off on hover */
 .card-img-overlay:hover .card-title, #giftCard:hover .card-title {
     text-shadow: none;
-	/* color: rgba(0,0,0,255); */
-    background: #152331;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #000000, #152331);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #000000, #152331); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #152331;  
+    background: -webkit-linear-gradient(to right, #000000, #152331);  
+    background: linear-gradient(to right, #000000, #152331); 
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -604,7 +602,7 @@ div.col-8.col-md-4 {
 #imageDisplay {
     display: none;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    min-height: 300px;
     border-radius: 10%;
     background-color: rgba(0,0,0,0);
     background-repeat: no-repeat;
@@ -788,6 +786,7 @@ hr:nth-child(3) {
     flex-direction: column;
     height: 100%;
     background-image: url("/images/clouds_navy.png");
+    background-size: 150%;
     background-color: rgb(255, 255, 255, 0.2);
     background-blend-mode: lighten;
     clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 0% 85%);
