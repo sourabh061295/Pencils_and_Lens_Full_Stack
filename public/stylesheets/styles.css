@@ -27,12 +27,13 @@ body {
 }
 
 .fadeIn {
+    /* Fade-in animation trigger class. Applied with .animate class for page transitions. */
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
 
 /* Modify all anchor tags */
-a, .reviewForm a, .new_btn_tray a {
+a, .reviewForm a, .button-group--new a {
     color: #e9ecef;
     text-decoration: none;
     transition: all 0.4s;
@@ -53,6 +54,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
+    /* Gradient scrollbar for webkit browsers (Chrome, Safari, Edge). Fallback color #554023 for unsupported browsers. */
     border-radius: 0.5em;
     background: #554023;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #c99846, #554023);  /* Chrome 10-25, Safari 5.1-6 */
@@ -153,6 +155,7 @@ a.nav-link.home {
 
 /* Rainbow button */
 .glow-on-hover {
+    /* Rainbow glow button - appears on hover with animated blur effect. Used for 'World of Colors' game button. */
     width: 13em;
     height: 50px;
     padding: 5px;
@@ -311,6 +314,7 @@ hr {
 
 /* Card image styling */
 .card-img-overlay {
+    /* Flex container for card content overlay. Used with background images. */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -474,7 +478,7 @@ div.col-8.col-md-4 {
 } 
 
 /* Individual image */
-.myImg {
+.gallery-image {
     width: 100%;
     height: 300px;
     cursor: pointer;
@@ -486,7 +490,7 @@ div.col-8.col-md-4 {
 }
 
 /* Hover effect for all images */
-.myImg:hover {
+.gallery-image:hover {
     opacity: 1.0;
     box-shadow: 5px 5px 20px rgba(172, 147, 98, 0.4), -5px -5px 20px rgba(172, 147, 98, 0.4),
                 5px -5px 20px rgba(172, 147, 98, 0.4), -5px 5px 20px rgba(172, 147, 98, 0.4),
@@ -577,7 +581,7 @@ div.col-8.col-md-4 {
 
 /* ORDER PAGE ======================================================== */
 /* Section titles */
-.tabs {
+.section-tabs {
     height: 2.5em;
     font-family: "Caveat Brush", cursive;
     text-align: center;
@@ -593,7 +597,7 @@ div.col-8.col-md-4 {
 }
 
 /* Section underlines */
-.tabs > hr {
+.section-tabs > hr {
     width: 80%;
     box-shadow: inset 0 10px 10px -14px rgba(0, 0, 0, 0.8);
 }
@@ -709,12 +713,12 @@ svg {
 }
 
 /* Adjusting the elements to center */
-.reviewForm label, .reviewForm .btn-tray, .reviewForm .upload_option {
+.reviewForm label, .reviewForm .button-group, .reviewForm .upload_option {
 	margin: 0 25%;
     color: #110011;
 }
 
-.reviewForm .btn-tray a {
+.reviewForm .button-group a {
     color: #110011;
 }
 

@@ -33,7 +33,7 @@
 		<div class="row images d-flex justify-content-center">
 			<% var img_arr = link_arr.slice(); %>
 			<% while (img_arr.length != 0) { var curr_idx = Math.floor(Math.random() * (img_arr.length)); %>
-				<div class='col-8 col-md-4 col-lg-3 my-4'><img class='myImg img-thumbnail' 
+				<div class='col-8 col-md-4 col-lg-3 my-4'><img class='gallery-image img-thumbnail' 
 					alt="<%= img_arr[curr_idx].title %>|<%= img_arr[curr_idx].description %>" 
 					src=" <%= img_arr[curr_idx].link %> ">
 				</div>
@@ -53,7 +53,7 @@
 </div>
 
 <!-- Buttons -->
-<div class="container new_btn_tray">
+<div class="container button-group--new">
 	<div class="row d-flex justify-content-around">
 		<a class="col-5" href="/upload">
 			<div class="button">

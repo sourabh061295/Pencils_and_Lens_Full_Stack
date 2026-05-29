@@ -1,5 +1,6 @@
 /* CSS for mobile devices */
-@media screen and (max-width: 630px) {
+@media (max-width: 630px) {
+    /* Mobile devices - standard phones and small tablets */
     /* Common for all pages */
     /* Hide the games button and jumbotron image */
     .glow-on-hover, h1 img {
@@ -58,12 +59,12 @@
     }
 	
 	/* Adjust the displayed tab */
-	.tabs.mt-5 {
+	.section-tabs.mt-5 {
 		height: 120px;
 	}
 
     /* Adjust the font size of the tab elements */
-    .tabs {
+    .section-tabs {
         font-size: 2em;
     }
 	
@@ -113,7 +114,7 @@
 	    width: 80%;
     }
 
-    .reviewForm label, .reviewForm .btn-tray, .reviewForm .upload_option {
+    .reviewForm label, .reviewForm .button-group, .reviewForm .upload_option {
 	    margin: 0 10%;
     }
 
@@ -135,7 +136,8 @@
 }
 
 /* For smaller phones */
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
+    /* Small phones breakpoint - extra small devices */
 	/* Reduce the height of jumbotron */
     .jumbotron {
         height: 13em;
@@ -169,12 +171,12 @@
 	}
 	
 	/* Adjust the displayed tab */
-	.tabs.mt-5 {
+	.section-tabs.mt-5 {
 		height: 70px;
 	}
 
 	/* Adjust the font size of the tab elements */
-	.tabs {
+	.section-tabs {
 		font-size: 1.8em;
 	}
 	
@@ -218,7 +220,7 @@
 }
 
 /* Center the 'World of Colors' button at Bootstrap's lg breakpoint and below */
-@media screen and (max-width: 991.98px) {
+@media (max-width: 991.98px) {
     .mobile-center {
         display: flex;
         justify-content: center;

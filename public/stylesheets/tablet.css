@@ -1,5 +1,4 @@
-@media screen and (max-width: 1530px) {
-
+@media (max-width: 1530px) {
     .jumbotron {
         height: 24em;
     }
@@ -14,7 +13,7 @@
 }
 
 @media (max-width: 991px) {
-
+    /* Tablet breakpoint - iPad portrait and small tablets (max 991px) */
 	a.nav-link.galleries, a.nav-link.home {
 		transform: skew(0deg);
         clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 85%, 50% 100%, 0% 85%);
@@ -29,7 +28,7 @@
     }
 
     #giftCard {
-        background-size: 200%;;
+        background-size: 200%;
     }
 
     .video-player-container {
@@ -55,8 +54,7 @@
     }
 }
 
-@media screen and (max-width: 810px) {
-
+@media (max-width: 810px) {
     .jumbotron {
         height: 20em;
     }
@@ -65,7 +63,7 @@
         font-size: 6em;
     }
 
-    .tabs {
+    .section-tabs {
 		font-size: 4em;
 	}
 

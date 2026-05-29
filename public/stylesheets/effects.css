@@ -1,4 +1,5 @@
 @keyframes glowing {
+    /* Rainbow button glow animation - animates background position for shimmer effect */
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
@@ -16,6 +17,7 @@
 }
 
 @keyframes fadeIn {
+    /* Page transition fade-in effect. Changes element from invisible to visible. */
     from {
         opacity: 0;
     }
@@ -41,7 +43,8 @@
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
 }
-@keyframes rainbow { 
+@keyframes rainbow {
+    /* Animated rainbow color gradient for navbar. Cycles through color positions. */
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}

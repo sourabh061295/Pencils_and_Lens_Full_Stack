@@ -9,9 +9,9 @@ var span = document.getElementsByClassName("close")[0];
 
 var captionText = document.getElementById("caption");
 
-/******* Apply random rotation to each .myImg element *******/
+/******* Apply random rotation to each .gallery-image element *******/
 function applyRandomRotations() {
-  document.querySelectorAll('.myImg').forEach(function(img) {
+  document.querySelectorAll('.gallery-image').forEach(function(img) {
     // Randomly assign either +5 or -5 degrees
     var randomRotation;
     do {
@@ -37,7 +37,7 @@ function applyRandomRotations() {
 // Assign each image and data to the modal function for pop up effect
 $(document).ready(function(){
   applyRandomRotations();
-  $('.myImg').on("click", function(){
+  $('.gallery-image').on("click", function(){
     modal.style.display = "block";
     document.body.classList.add('modal-open-custom');
 	var newSrc = this.src;
