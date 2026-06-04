@@ -70,7 +70,6 @@ switch (currPage) {
                 document.querySelector(".jumbotron").style.backgroundRepeat = "repeat";
                 document.querySelector(".jumbotron").style.animation = "panDown 15s linear infinite";
                 break;
-  case "color": document.querySelector(".jumbotron").style.backgroundImage = "url(/images/color_bg.jpg)";
-                document.querySelector(".navbar").classList.add("rainbow_background");
+  case "color": document.querySelector(".jumbotron").classList.add("rainbow_background");
                 break;
 }
